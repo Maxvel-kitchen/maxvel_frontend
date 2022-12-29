@@ -10,7 +10,7 @@
   --mobile-maintext-font: 14px;
   --desktop-spantext-font: 20px;
   --mobile-breakpoint: 768px;
-	--desktop-breakpoint: 1024px;
+  --desktop-breakpoint: 1024px;
 }
 
 body {
