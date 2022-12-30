@@ -1,7 +1,6 @@
-
 function Cart() {
     return (
-        <main className="main">
+        <main>
             <p>Здесь будет наша корзина</p>
         </main>
     );

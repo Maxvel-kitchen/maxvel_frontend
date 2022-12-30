@@ -19,10 +19,12 @@
     font-size: var(--mobile-maintext-font);
 }
 .menu__link {
+    composes: navigation__link;
     display: none;
 }
 
 .cart__link {
+    composes: navigation__link;
     position: fixed;
     right: 17px;
     width: 25px;
