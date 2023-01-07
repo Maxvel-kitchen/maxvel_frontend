@@ -4,13 +4,11 @@
   --footer-bg-color: #e6e6e6;
   --main-text-color: #4d4d4d;
   --span-text-color: #252525;
-  --desktop-block-padding: auto 80px;
-  --mobile-block-padding: auto 16px;
+  --desktop-block-padding: 80px;
+  --mobile-block-padding: 16px;
   --desktop-maintext-font: 16px;
   --mobile-maintext-font: 14px;
   --desktop-spantext-font: 20px;
-  --mobile-breakpoint: 768px;
-  --desktop-breakpoint: 1024px;
 }
 
 body {
