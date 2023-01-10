@@ -5,7 +5,6 @@ import style from "./cart.module.css";
 function Cart() {
   return (
     <main className={style.content}>
-      <p>Корзина пуста</p>
       <Order />
       <OrderForm />
     </main>

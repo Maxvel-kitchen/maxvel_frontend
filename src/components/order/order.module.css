@@ -1,6 +1,3 @@
-p {
-  margin: 0;
-}
 .content {
   width: 100%;
 }
@@ -17,7 +14,7 @@ p {
 .image {
   height: 100px;
   width: 84px;
-  background-color: rgb(255, 243, 68);
+  background-color: rgba(255, 243, 68, 0.876);
   border-radius: 10px;
 }
 .info {
@@ -25,16 +22,13 @@ p {
   gap: 16px;
   flex-direction: column-reverse;
 }
-.description {
-}
 .counter {
   display: flex;
+  gap: 20px;
 }
 .button {
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--span-text-color);
-  border-radius: 50%;
+  margin-top: 10px;
+  border: none;
   background-color: transparent;
 }
 @media screen and (min-width: 768px) {
@@ -47,8 +41,6 @@ p {
     flex-direction: row;
     justify-content: space-between;
     gap: 50px;
-  }
-  .description {
   }
   .image {
     height: 205px;

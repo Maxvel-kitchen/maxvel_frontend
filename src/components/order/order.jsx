@@ -20,7 +20,7 @@ function Order() {
               >
                 -
               </button>
-              <p>Кол-во</p>
+              <p>1</p>
               <button
                 className={style.button}
                 aria-label="Добавить"
@@ -29,65 +29,11 @@ function Order() {
                 +
               </button>
             </div>
-            <p>Цена</p>
-          </div>
-        </div>
-        <div className={style.item}>
-          <img className={style.image} alt="Pic" />
-          <div className={style.info}>
-            <div className={style.description}>
-              <p>Описание блюда длинное</p>
-              <p>Цена блюда / шт</p>
-            </div>
-            <div className={style.counter}>
-              <button
-                className={style.button}
-                aria-label="Убавить"
-                type="button"
-              >
-                -
-              </button>
-              <p>Кол-во</p>
-              <button
-                className={style.button}
-                aria-label="Добавить"
-                type="button"
-              >
-                +
-              </button>
-            </div>
-            <p>Цена</p>
-          </div>
-        </div>
-        <div className={style.item}>
-          <img className={style.image} alt="Pic" />
-          <div className={style.info}>
-            <div className={style.description}>
-              <p>Описание блюда длинное</p>
-              <p>Цена блюда / шт</p>
-            </div>
-            <div className={style.counter}>
-              <button
-                className={style.button}
-                aria-label="Убавить"
-                type="button"
-              >
-                -
-              </button>
-              <p>Кол-во</p>
-              <button
-                className={style.button}
-                aria-label="Добавить"
-                type="button"
-              >
-                +
-              </button>
-            </div>
-            <p>Цена</p>
+            <p>1000</p>
           </div>
         </div>
       </div>
-      <p>Итого: Цена</p>
+      <h2>Итого: 1000</h2>
     </div>
   );
 }

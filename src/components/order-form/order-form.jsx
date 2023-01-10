@@ -1,58 +1,87 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-return-assign */
 import style from "./order-form.module.css";
+import Input from "../input/input";
+import ButtonSubmit from "../button-submit/button-submit";
+
+const inputs = [
+  {
+    id: "name",
+    textarea: false,
+    placeholder: "Ваше имя",
+    type: "text",
+    minLength: 3,
+  },
+  {
+    id: "tel",
+    textarea: false,
+    placeholder: "Ваш номер телефона",
+    type: "tel",
+    minLength: 3,
+  },
+  {
+    id: "email",
+    textarea: false,
+    placeholder: "Ваша почта",
+    type: "email",
+    minLength: 3,
+  },
+  {
+    id: "date",
+    textarea: false,
+    placeholder: "Дата мероприятия",
+    type: "date",
+    minLength: 3,
+  },
+  {
+    id: "adress",
+    textarea: true,
+    placeholder: "Адрес мероприятия",
+    type: "text",
+    minLength: 3,
+  },
+  {
+    id: "comment",
+    textarea: true,
+    placeholder: "Комментарий",
+    type: "text",
+    minLength: 1,
+  },
+];
 
 function OrderForm() {
   return (
     <div className={style.content}>
       <h2 className={style.header}>Оформить заказ</h2>
       <form className={style.form}>
-        <input
-          className={style.input}
-          id="name"
-          placeholder="Ваше имя"
-          type="text"
-          minLength="3"
-          required
-        />
-        <input
-          className={style.input}
-          id="tel"
-          placeholder="Ваш номер телефона"
-          type="tel"
-          required
-        />
-        <input
-          className={style.input}
-          id="email"
-          placeholder="Ваша почта"
-          type="email"
-          required
-        />
-        <input
-          className={style.input}
-          id="date"
-          placeholder="Дата мероприятия"
-          type="date"
-          required
-        />
-        <input
-          className={style.input__adress}
-          id="adress"
-          placeholder="Адрес мероприятия"
-          type="text"
-          required
-        />
-        <input
-          className={style.input__comment}
-          id="comment"
-          placeholder="Комментарий"
-          type="text"
-        />
-        <button className={style.button} type="submit">
-          Отправить
-        </button>
-        <div className="input__confirmation">
-          <input id="confirm" type="checkbox" />
-          <p>
+        {inputs.map((input) => (
+          <Input
+            key={input.id}
+            id={input.id}
+            textarea={input.textarea}
+            placeholder={input.placeholder}
+            type={input.type === "date" ? "text" : input.type}
+            onFocus={(e) =>
+              input.type === "date" ? (e.target.type = "date") : ""
+            }
+            onBlur={(e) =>
+              input.type === "date" ? (e.target.type = "text") : ""
+            }
+            minLength={input.minLength}
+          />
+        ))}
+        <ButtonSubmit />
+        <div className={style.confirmation}>
+          <div className={style.confirmation__box}>
+            <input
+              className={style.confirmation__checkbox}
+              type="checkbox"
+              id="check"
+              required
+            />
+            <label htmlFor="check" />
+          </div>
+          <p className={style.confirmation__text}>
             Нажимая на кнопку, вы соглашаетесь с обработкой своих персональных
             данных
           </p>

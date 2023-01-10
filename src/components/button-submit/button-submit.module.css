@@ -1,0 +1,14 @@
+.button {
+  border-radius: 30px;
+  height: 50px;
+  border: none;
+  background-color: var(--secondary-bg-color);
+  color: var(--span-text-color);
+  font-size: var(--desktop-maintext-font);
+  line-height: 19px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+.button:hover {
+  opacity: 0.7;
+}
