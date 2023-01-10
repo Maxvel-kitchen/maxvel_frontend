@@ -13,13 +13,13 @@ function Header() {
       <NavLink className={style.navigation__link} to="/">
         <img className={style.logo__image} alt="Логотип Максвел" src={logo} />
       </NavLink>
-      <div className={style.navigation__links}>
+      <nav className={style.navigation__links}>
         <NavLink className={style.menu__link} to="/">
           Меню
         </NavLink>
         <NavLink className={style.navigation__link}>Контакты</NavLink>
         <NavLink className={style.cart__link} to="/cart" />
-      </div>
+      </nav>
     </header>
   );
 }

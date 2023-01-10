@@ -1,0 +1,11 @@
+.content {
+  padding: 17px var(--mobile-block-padding);
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 45px var(--desktop-block-padding);
+    margin-left: 0;
+  }
+}
