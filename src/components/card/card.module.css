@@ -1,6 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  gap: 18px;
   min-height: 352px;
   max-width: 189px;
   position: relative;
@@ -26,6 +27,17 @@
   left: 10px;
 }
 
-.title {  
-  margin: 0;  
+.title {
+  margin: 0;
+  text-align: start;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  margin: 0;
+  flex: none;
 }
