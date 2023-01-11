@@ -3,58 +3,14 @@
 import style from "./order-form.module.css";
 import Input from "../input/input";
 import ButtonSubmit from "../button-submit/button-submit";
-
-const inputs = [
-  {
-    id: "name",
-    textarea: false,
-    placeholder: "Ваше имя",
-    type: "text",
-    minLength: 3,
-  },
-  {
-    id: "tel",
-    textarea: false,
-    placeholder: "Ваш номер телефона",
-    type: "tel",
-    minLength: 3,
-  },
-  {
-    id: "email",
-    textarea: false,
-    placeholder: "Ваша почта",
-    type: "email",
-    minLength: 3,
-  },
-  {
-    id: "date",
-    textarea: false,
-    placeholder: "Дата мероприятия",
-    type: "date",
-    minLength: 3,
-  },
-  {
-    id: "adress",
-    textarea: true,
-    placeholder: "Адрес мероприятия",
-    type: "text",
-    minLength: 3,
-  },
-  {
-    id: "comment",
-    textarea: true,
-    placeholder: "Комментарий",
-    type: "text",
-    minLength: 1,
-  },
-];
+import orderFormInputs from "../../utils/constants";
 
 function OrderForm() {
   return (
     <div className={style.content}>
       <h2 className={style.header}>Оформить заказ</h2>
       <form className={style.form}>
-        {inputs.map((input) => (
+        {orderFormInputs.map((input) => (
           <Input
             key={input.id}
             id={input.id}
@@ -70,7 +26,7 @@ function OrderForm() {
             minLength={input.minLength}
           />
         ))}
-        <ButtonSubmit />
+        <ButtonSubmit type="submit" text="Отправить" />
         <div className={style.confirmation}>
           <div className={style.confirmation__box}>
             <input
