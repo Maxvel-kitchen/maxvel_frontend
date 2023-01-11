@@ -1,0 +1,15 @@
+.content {
+  padding: 0 var(--mobile-block-padding);
+  box-sizing: border-box;
+  max-width: 625px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 0 var(--desktop-block-padding);
+    max-width: 100%;
+  }
+}
