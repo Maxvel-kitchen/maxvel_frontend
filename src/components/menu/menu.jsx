@@ -1,10 +1,10 @@
-import Card from "../card/card";
+import CardList from "../card-list/card-list";
 
 function Menu() {
   return (
     <main>
-      <Card/>
       <p>Здесь будет наше меню</p>
+      <CardList/>      
     </main>
   );
 }
