@@ -33,11 +33,25 @@
 }
 
 .container {
+  height: 35px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .price {
   margin: 0;
   flex: none;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 35px;
+  min-width: 110px;
+  background-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
+  border-radius: 30px;
+  cursor: pointer;
 }
