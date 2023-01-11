@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 18px;
   min-height: 352px;
-  max-width: 189px;
+  width: 100%;
   position: relative;
   list-style: none;
 }
@@ -29,7 +29,6 @@
 
 .title {
   margin: 0;
-  text-align: start;
 }
 
 .container {

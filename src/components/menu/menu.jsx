@@ -1,10 +1,12 @@
 import CardList from "../card-list/card-list";
+import MenuList from "../menu-list/menu-list";
+import style from "./menu.module.css";
 
 function Menu() {
   return (
-    <main>
-      <p>Здесь будет наше меню</p>
-      <CardList/>      
+    <main className={style.menu}>
+      <MenuList />
+      <CardList />
     </main>
   );
 }

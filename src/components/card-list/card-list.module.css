@@ -1,5 +1,8 @@
 .cards {
+  width: calc(100vw - 190px);
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 189px);
+  grid-column-gap: 29px;
+  grid-row-gap: 76px;
 }
