@@ -1,5 +1,6 @@
 .content {
   padding: 0 var(--mobile-block-padding);
+  padding-top: var(--header-mobile-height);
   box-sizing: border-box;
   max-width: 625px;
   margin: 0 auto;
@@ -10,6 +11,7 @@
 @media screen and (min-width: 768px) {
   .content {
     padding: 0 var(--desktop-block-padding);
+    padding-top: var(--header-desktop-height);
     max-width: 100%;
   }
 }
