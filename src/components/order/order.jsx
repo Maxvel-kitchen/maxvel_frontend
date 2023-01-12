@@ -1,9 +1,10 @@
 import style from "./order.module.css";
+import Title from "../title/title";
 
 function Order() {
   return (
     <div className={style.content}>
-      <h2 className={style.header}>Заказ</h2>
+      <Title>Заказ</Title>
       <div className={style.items}>
         <div className={style.item}>
           <img className={style.image} alt="Pic" />
@@ -33,7 +34,7 @@ function Order() {
           </div>
         </div>
       </div>
-      <h2>Итого: 1000</h2>
+      <Title>Итого</Title>
     </div>
   );
 }

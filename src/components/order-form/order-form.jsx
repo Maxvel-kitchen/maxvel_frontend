@@ -2,13 +2,14 @@
 /* eslint-disable no-return-assign */
 import style from "./order-form.module.css";
 import Input from "../input/input";
+import Title from "../title/title";
 import ButtonSubmit from "../button-submit/button-submit";
 import orderFormInputs from "../../utils/constants";
 
 function OrderForm() {
   return (
     <div className={style.content}>
-      <h2 className={style.header}>Оформить заказ</h2>
+      <Title>Оформить заказ</Title>
       <form className={style.form}>
         {orderFormInputs.map((input) => (
           <Input
@@ -26,7 +27,7 @@ function OrderForm() {
             minLength={input.minLength}
           />
         ))}
-        <ButtonSubmit type="submit" text="Отправить" />
+
         <div className={style.confirmation}>
           <div className={style.confirmation__box}>
             <input
@@ -42,6 +43,7 @@ function OrderForm() {
             данных
           </p>
         </div>
+        <ButtonSubmit type="submit" text="Отправить" />
       </form>
     </div>
   );

@@ -4,7 +4,6 @@
   border: 1px solid var(--span-text-color);
   padding: 15px;
   box-sizing: border-box;
-  color: var(--sub-text-color);
   font-size: var(--mobile-maintext-font);
   line-height: 17px;
 }
