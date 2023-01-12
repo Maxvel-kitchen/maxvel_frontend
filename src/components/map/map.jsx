@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/style-prop-object */
-/* eslint-disable react/no-unknown-property */
 function Map() {
   return (
     <iframe
@@ -12,7 +8,8 @@ function Map() {
       allowFullScreen=""
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
+      title="Карта"
+     />
   );
 }
 
