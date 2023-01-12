@@ -1,3 +1,4 @@
 .menu {
   display: flex;
+  margin: 0 var(--desktop-block-padding);
 }
