@@ -6,22 +6,24 @@ import logo from "../../images/logo.svg";
 function Header({ isOpen }) {
   return (
     <header className={style.header}>
-      <button
-        onClick={isOpen}
-        className={style.hamburger__menu}
-        type="button"
-        aria-label="Кнопка меню"
-      />
-      <NavLink className={style.navigation__link} to="/">
-        <img className={style.logo__image} alt="Логотип Максвел" src={logo} />
-      </NavLink>
-      <nav className={style.navigation__links}>
-        <NavLink className={style.menu__link} to="/">
-          Меню
+      <div className={style.container}>
+        <button
+          onClick={isOpen}
+          className={style.hamburger__menu}
+          type="button"
+          aria-label="Кнопка меню"
+        />
+        <NavLink className={style.navigation__link} to="/">
+          <img className={style.logo__image} alt="Логотип Максвел" src={logo} />
         </NavLink>
-        <NavLink className={style.navigation__link}>Контакты</NavLink>
-        <NavLink className={style.cart__link} to="/cart" />
-      </nav>
+        <nav className={style.navigation__links}>
+          <NavLink className={style.menu__link} to="/">
+            Меню
+          </NavLink>
+          <NavLink className={style.navigation__link}>Контакты</NavLink>
+          <NavLink className={style.cart__link} to="/cart" />
+        </nav>
+      </div>
     </header>
   );
 }
