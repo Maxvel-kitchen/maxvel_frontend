@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 22px;
+}
+
+.button {
+  padding: 0;
+  text-align: center;  
+  width: 22px;
+  height: 100%;
+  border: 1px solid var(--main-text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--desktop-maintext-font);
+}
+
+.input {  
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid var(--main-text-color);
+  height: 100%;
+  max-width: 34px;
+  text-align: center;
+}
