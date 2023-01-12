@@ -3,6 +3,58 @@
 }
 
 .container {
+  box-sizing: border-box;
   max-width: var(--desktop-container-width);
   margin: 0 auto;
+  padding: 55px 80px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.link {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link_instagram {
+  background-image: url(../../images/instagram.svg);
+}
+
+.link_telegram {
+  background-image: url(../../images/telegram.svg);
+}
+
+.link_whatsapp {
+  background-image: url(../../images/whatsApp.svg);
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--span-text-color);
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
