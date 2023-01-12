@@ -1,13 +1,15 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/button-has-type */
+import PropTypes from "prop-types";
 import style from "./button-submit.module.css";
 
-function ButtonSubmit({ type, text }) {
+function ButtonSubmit({ text }) {
   return (
-    <button className={style.button} type={type}>
+    <button className={style.button} type="submit">
       {text}
     </button>
   );
 }
+ButtonSubmit.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default ButtonSubmit;
