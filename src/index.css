@@ -8,6 +8,7 @@
   --main-text-color: #4d4d4d;
   --span-text-color: #252525;
   --sub-text-color: #a9a9a9;
+  --desktop-container-width: 1440px;
   --desktop-block-padding: 80px;
   --mobile-block-padding: 16px;
   --desktop-maintext-font: 16px;
