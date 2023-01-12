@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 
 function Header() {
   return (
-    <header className={style.header}>
+    <header className={style.header}>      
       <button
         className={style.hamburger__menu}
         type="button"

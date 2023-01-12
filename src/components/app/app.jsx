@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import style from "./app.module.css";
 import Header from "../header/header";
 import Menu from "../menu/menu";
@@ -7,7 +8,7 @@ import Footer from "../footer/footer";
 
 function App() {
   return (
-    <div className={style.app}>
+    <>
       <Header />
       <Routes>
         <Route exact path="/" element={<Menu />} />
@@ -15,7 +16,7 @@ function App() {
         <Route path="/order" />
       </Routes>
       <Footer/>
-    </div>
+    </>
   );
 }
 

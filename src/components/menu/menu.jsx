@@ -5,8 +5,10 @@ import style from "./menu.module.css";
 function Menu() {
   return (
     <main className={style.menu}>
-      <MenuList />
-      <CardList />
+      <div className={style.container}>
+        <MenuList />
+        <CardList />
+      </div>
     </main>
   );
 }
