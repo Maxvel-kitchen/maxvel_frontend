@@ -1,13 +1,14 @@
 .modal {
-  width: 100%;
-  visibility: visible;
-}
-.hidden {
-  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .container {
   max-width: 210px;
-  padding: 34px 28px 32px;
+  height: 100vh;
+  padding: 34px 8px 32px;
   box-sizing: border-box;
   background-color: var(--footer-bg-color);
   position: fixed;

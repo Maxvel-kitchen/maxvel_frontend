@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      <div id="app-modal" />
       <Header isOpen={() => setIsOpen(true)} />
       <Routes>
         <Route exact path="/" element={<Menu />} />
