@@ -1,8 +1,8 @@
 /* eslint-disable react/self-closing-comp */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import Map from "../map/map";
+import Input from "../input/input";
+import ButtonSubmit from "../button-submit/button-submit"
 import style from "./footer.module.css";
 
 function Footer() {
@@ -18,6 +18,7 @@ function Footer() {
                 className={`${style.link} ${style.link_instagram}`}
                 href="https://www.instagram.com"
                 rel="noopener noreferrer"
+                aria-label="instagram"
               ></a>
             </li>
             <li className={style.link}>
@@ -26,6 +27,7 @@ function Footer() {
                 className={`${style.link} ${style.link_telegram}`}
                 href="https://web.telegram.org/"
                 rel="noopener noreferrer"
+                aria-label="telegram"
               ></a>
             </li>
             <li className={style.link}>
@@ -34,6 +36,7 @@ function Footer() {
                 className={`${style.link} ${style.link_whatsapp}`}
                 href="https://web.whatsapp.com/"
                 rel="noopener noreferrer"
+                aria-label="whatsapp"
               ></a>
             </li>
           </ul>
@@ -42,10 +45,25 @@ function Footer() {
           <p className={style.text}>Tochni 7740, Кипр</p>
           <Map />
         </div>
-        <form>
+        <form className={style.form}>
           <p className={style.text}>
             Ничего не хочу решать, просто позвоните мне:
           </p>
+          <fieldset className={style.fieldset}>
+            <Input
+              placeholder="Ваш номер телефона"
+              type="text"
+              minLength="8"
+              required="required"
+            />
+            <Input
+              placeholder="Комментарий"
+              type="text"
+              minLength="100"
+              required="required"
+            />
+            <ButtonSubmit type="submit" text="Отправить"/>
+          </fieldset>
         </form>
       </div>
     </footer>

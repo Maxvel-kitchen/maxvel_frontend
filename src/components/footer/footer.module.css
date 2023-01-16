@@ -7,8 +7,7 @@
   max-width: var(--desktop-container-width);
   margin: 0 auto;
   padding: 55px 80px 70px;
-  display: flex;
-  justify-content: space-between;
+  display: flex;  
 }
 
 .contacts {
@@ -54,7 +53,21 @@
 }
 
 .map {
+  margin-left: 200px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.form {
+  margin-left: auto;
+}
+
+.fieldset {
+  margin: 20px 0 0 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
