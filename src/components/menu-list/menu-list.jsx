@@ -1,9 +1,10 @@
 import style from "./menu-list.module.css";
+import Title from "../title/title";
 
 function MenuList() {
   return (
     <div className={style.container}>
-      <p className={style.title}>Меню</p>
+      <Title title="Меню" styles={style.title} />
       <ul className={style.items}>
         <li className={style.item}>Закуски</li>
         <li className={style.item}>Салаты</li>

@@ -8,7 +8,7 @@ import Button from "../button/button";
 function OrderForm() {
   return (
     <div className={style.content}>
-      <Title>Оформить заказ</Title>
+      <Title title="Оформить заказ" styles={style.title} />
       <form className={style.form}>
         <Input
           textarea={false}

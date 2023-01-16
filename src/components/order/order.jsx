@@ -4,7 +4,7 @@ import Title from "../title/title";
 function Order() {
   return (
     <div className={style.content}>
-      <Title>Заказ</Title>
+      <Title title="Заказ" styles={style.title} />
       <div className={style.items}>
         <div className={style.item}>
           <img className={style.image} alt="Pic" />
