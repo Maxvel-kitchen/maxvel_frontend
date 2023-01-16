@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import Map from "../map/map";
 import Input from "../input/input";
-import ButtonSubmit from "../button-submit/button-submit"
+import Button from "../button/button";
 import style from "./footer.module.css";
 
 function Footer() {
@@ -62,7 +62,7 @@ function Footer() {
               minLength="100"
               required="required"
             />
-            <ButtonSubmit type="submit" text="Отправить"/>
+            <Button text="Отправить" styles={style.submit} submit />
           </fieldset>
         </form>
       </div>

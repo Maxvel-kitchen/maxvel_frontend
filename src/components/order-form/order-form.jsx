@@ -2,31 +2,56 @@
 /* eslint-disable no-return-assign */
 import style from "./order-form.module.css";
 import Input from "../input/input";
-import ButtonSubmit from "../button-submit/button-submit";
-import orderFormInputs from "../../utils/constants";
+import Button from "../button/button";
 
 function OrderForm() {
   return (
     <div className={style.content}>
       <h2 className={style.header}>Оформить заказ</h2>
       <form className={style.form}>
-        {orderFormInputs.map((input) => (
-          <Input
-            key={input.id}
-            id={input.id}
-            textarea={input.textarea}
-            placeholder={input.placeholder}
-            type={input.type === "date" ? "text" : input.type}
-            onFocus={(e) =>
-              input.type === "date" ? (e.target.type = "date") : ""
-            }
-            onBlur={(e) =>
-              input.type === "date" ? (e.target.type = "text") : ""
-            }
-            minLength={input.minLength}
-          />
-        ))}
-        <ButtonSubmit type="submit" text="Отправить" />
+        <Input
+          textarea={false}
+          placeholder="Ваше имя"
+          type="text"
+          minLength={3}
+          required={false}
+        />
+        <Input
+          textarea={false}
+          placeholder="Ваш номер телефона"
+          type="tel"
+          minLength={3}
+          required
+        />
+        <Input
+          textarea={false}
+          placeholder="Ваша почта"
+          type="email"
+          minLength={3}
+          required
+        />
+        <Input
+          textarea={false}
+          placeholder="Дата мероприятия"
+          type="date"
+          minLength={3}
+          required={false}
+        />
+        <Input
+          textarea
+          placeholder="Адрес мероприятия"
+          type="text"
+          minLength={3}
+          required={false}
+        />
+        <Input
+          textarea
+          placeholder="Комментарий"
+          type="text"
+          minLength={0}
+          required={false}
+        />
+        <Button text="Отправить" styles={style.submit} submit />
         <div className={style.confirmation}>
           <div className={style.confirmation__box}>
             <input
