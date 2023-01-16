@@ -3,6 +3,9 @@
   display: grid;
   row-gap: 20px;
 }
+.submit {
+  height: 50px;
+}
 .confirmation {
   display: flex;
   align-items: center;

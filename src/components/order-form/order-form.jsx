@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 import style from "./order-form.module.css";
 import Input from "../input/input";
-import ButtonSubmit from "../button-submit/button-submit";
+import Button from "../button/button";
 
 function OrderForm() {
   return (
@@ -51,7 +51,7 @@ function OrderForm() {
           minLength={0}
           required={false}
         />
-        <ButtonSubmit text="Отправить" />
+        <Button text="Отправить" styles={style.submit} submit />
         <div className={style.confirmation}>
           <div className={style.confirmation__box}>
             <input
