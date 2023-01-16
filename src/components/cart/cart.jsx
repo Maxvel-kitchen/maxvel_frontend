@@ -4,9 +4,11 @@ import style from "./cart.module.css";
 
 function Cart() {
   return (
-    <main className={style.content}>
-      <Order />
-      <OrderForm />
+    <main className={style.cart}>
+      <div className={style.content}>
+        <Order />
+        <OrderForm />
+      </div>
     </main>
   );
 }
