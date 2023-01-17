@@ -20,7 +20,13 @@
 
 .item {
   list-style: none;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 17px;
   color: var(--main-text-color);
+}
+@media screen and (min-width: 768px) {
+  .item {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }

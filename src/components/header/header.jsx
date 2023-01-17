@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import style from "./header.module.css";
 import logo from "../../images/logo.svg";
 
-function Header() {
+function Header({ isOpen }) {
   return (
     <header className={style.header}>
       <div className={style.container}>
         <button
+          onClick={isOpen}
           className={style.hamburger__menu}
           type="button"
           aria-label="Кнопка меню"
@@ -25,5 +27,7 @@ function Header() {
     </header>
   );
 }
-
+Header.propTypes = {
+  isOpen: PropTypes.func.isRequired,
+};
 export default Header;

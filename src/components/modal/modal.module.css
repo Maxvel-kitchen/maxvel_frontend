@@ -1,0 +1,29 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.container {
+  max-width: 210px;
+  height: 100vh;
+  padding: 34px 8px 32px;
+  box-sizing: border-box;
+  background-color: var(--footer-bg-color);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+.button {
+  background-color: transparent;
+  background-image: url(../../images/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 10px;
+  height: 14px;
+  position: absolute;
+  right: 14px;
+}

@@ -16,7 +16,7 @@ function MenuList() {
         <li className={style.item}>Десерты</li>
         <li className={style.item}>Напитки</li>
         <li className={style.item}>Станция</li>
-        <li className={style.item}>Доп. услуги</li>
+        <li className={style.item}>Услуги</li>
         <li className={style.item}>Посуда</li>
       </ul>
     </div>
