@@ -2,12 +2,13 @@
 /* eslint-disable no-return-assign */
 import style from "./order-form.module.css";
 import Input from "../input/input";
+import Title from "../title/title";
 import Button from "../button/button";
 
 function OrderForm() {
   return (
     <div className={style.content}>
-      <h2 className={style.header}>Оформить заказ</h2>
+      <Title title="Оформить заказ" styles={style.title} />
       <form className={style.form}>
         <Input
           textarea={false}
