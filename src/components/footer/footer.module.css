@@ -7,13 +7,16 @@
   max-width: var(--desktop-container-width);
   margin: 0 auto;
   padding: 55px 80px 70px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "contacts map form";
 }
 
 .contacts {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  grid-area: contacts;
 }
 
 .items {
@@ -53,24 +56,75 @@
 }
 
 .map {
-  margin-left: 200px;
+  padding: 0 38px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  grid-area: map;
 }
 
 .form {
   margin-left: auto;
+  grid-area: form;
 }
 
 .fieldset {
   margin: 20px 0 0 0;
   padding: 0;
   border: 0;
+  max-width: 298px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .submit {
   height: 50px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 36px 16px 44px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+      "form"
+      "contacts"
+      "map";
+    justify-items: center;
+    row-gap: 52px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .map {
+    padding: 0;
+  }
+
+  .form {
+    margin-left: 0;
+  }
+
+  .fieldset {
+    margin: 24px 0 0 0;
+    max-width: 100%;
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .form {
+    width: 100%;
+  }
+
+  .contacts {
+    justify-self: start;
+  }
+
+  .map {
+    justify-self: start;
+  }
 }
