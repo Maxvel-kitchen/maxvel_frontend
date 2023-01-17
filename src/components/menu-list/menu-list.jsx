@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../title/title";
 
@@ -5,20 +6,110 @@ function MenuList() {
   return (
     <div className={style.container}>
       <Title title="Меню" styles={style.title} />
-      <ul className={style.items}>
-        <li className={style.item}>Закуски</li>
-        <li className={style.item}>Салаты</li>
-        <li className={style.item}>Платтеры</li>
-        <li className={style.item}>Горячее</li>
-        <li className={style.item}>Соусы</li>
-        <li className={style.item}>Детское</li>
-        <li className={style.item}>Азия</li>
-        <li className={style.item}>Десерты</li>
-        <li className={style.item}>Напитки</li>
-        <li className={style.item}>Станция</li>
-        <li className={style.item}>Услуги</li>
-        <li className={style.item}>Посуда</li>
-      </ul>
+      <nav>
+        <ul className={style.items}>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/starter"
+            >
+              Закуски
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/salad"
+            >
+              Салаты
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/platter"
+            >
+              Платтеры
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/main-dish"
+            >
+              Горячее
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/sauce"
+            >
+              Соусы
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/kids"
+            >
+              Детское
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/dessert"
+            >
+              Десерты
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/drink"
+            >
+              Напитки
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/station"
+            >
+              Станция
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/service"
+            >
+              Услуги
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

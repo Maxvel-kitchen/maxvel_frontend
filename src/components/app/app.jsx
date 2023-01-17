@@ -16,7 +16,7 @@ function App() {
       <div id="app-modal" />
       <Header isOpen={() => setIsOpen(true)} />
       <Routes>
-        <Route exact path="/" element={<Menu />} />
+        <Route exact path="*" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" />
       </Routes>

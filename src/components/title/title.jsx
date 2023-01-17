@@ -3,7 +3,7 @@ import cn from "classnames";
 import style from "./title.module.css";
 
 function Title({ title, styles }) {
-  return <p className={cn(style.title, styles)}>{title}</p>;
+  return <h2 className={cn(style.title, styles)}>{title}</h2>;
 }
 
 Title.propTypes = {
