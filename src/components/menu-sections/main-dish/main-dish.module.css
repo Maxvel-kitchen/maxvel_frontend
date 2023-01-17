@@ -9,7 +9,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: flex-end;
   row-gap: 25px;
   column-gap: 8px;
   margin-bottom: 60px;
