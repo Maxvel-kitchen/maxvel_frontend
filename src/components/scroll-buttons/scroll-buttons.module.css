@@ -1,0 +1,27 @@
+.items {
+  width: 150vw;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+.link {
+  background-color: var(--footer-bg-color);
+  font-size: var(--mobile-maintext-font);
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .items {
+    gap: 10px;
+    flex-direction: column;
+    margin: 20px 0 0;
+  }
+  .link {
+    font-size: var(--desktop-maintext-font);
+    padding: 0 8px;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}

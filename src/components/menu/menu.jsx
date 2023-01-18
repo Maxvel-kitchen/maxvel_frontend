@@ -48,7 +48,7 @@ function Menu() {
     <Element name="menu">
       <main className={style.menu}>
         <div className={style.container}>
-          {menuList && <MenuList />}
+          <div className={style.sticky}>{menuList && <MenuList />}</div>
           <Routes>
             <Route
               exact
