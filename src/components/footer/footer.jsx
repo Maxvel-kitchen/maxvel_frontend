@@ -63,16 +63,18 @@ function Footer() {
           </p>
           <fieldset className={style.fieldset}>
             <Input
+              textarea={false}
               placeholder="Ваш номер телефона"
               type="text"
-              minLength="8"
-              required="required"
+              minLength={8}
+              required
             />
             <Input
+              textarea={false}
               placeholder="Комментарий"
               type="text"
-              minLength="100"
-              required="required"
+              minLength={100}
+              required
             />
             <Button text="Отправить" styles={style.submit} submit />
           </fieldset>
