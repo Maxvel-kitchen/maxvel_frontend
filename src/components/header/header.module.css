@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   background-color: var(--main-bg-color);
-  z-index: 3;
+  z-index: 2;
 }
 .container {
   max-width: 625px;
