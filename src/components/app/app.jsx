@@ -10,7 +10,11 @@ import Modal from "../modal/modal";
 
 function App() {
   const [isOpen, setIsOpen] = React.useState(false);
-
+  const setClose = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, "375");
+  };
   return (
     <>
       <div id="app-modal" />
@@ -21,7 +25,7 @@ function App() {
         <Route path="/order" />
       </Routes>
       <Footer />
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <Modal isOpen={isOpen} onClose={setClose} />
     </>
   );
 }
