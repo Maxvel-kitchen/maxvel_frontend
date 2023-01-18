@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useRef } from "react";
@@ -25,9 +26,9 @@ function Modal({ isOpen, onClose }) {
               className={style.button}
               type="button"
               aria-label="Закрыть"
-              onClick={onClose}
+              onClick={modalClose}
             />
-            <MenuList onClose={onClose} />
+            <MenuList onClose={modalClose} />
           </div>
         </div>,
         document.getElementById("app-modal")
