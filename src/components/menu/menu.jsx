@@ -25,10 +25,10 @@ import MenuList from "../menu-list/menu-list";
 import style from "./menu.module.css";
 
 function Menu() {
-  const [width, setWidth] = useState(undefined);
-  const [menuList, setMenuList] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [menuList, setMenuList] = useState(true);  
 
-  function windowWidth() {
+  function windowWidth() {    
     setWidth(() => window.innerWidth);
   }
 
