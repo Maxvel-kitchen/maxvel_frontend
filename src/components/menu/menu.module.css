@@ -1,11 +1,13 @@
 .menu {
   padding-top: 210px;
 }
-
 .container {
   display: flex;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 80px;
   max-width: var(--desktop-container-width);
+}
+.title {
+  margin: 0;
 }

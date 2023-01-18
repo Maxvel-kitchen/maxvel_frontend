@@ -28,6 +28,7 @@
   text-decoration: none;
   font-size: var(--mobile-maintext-font);
   line-height: 19px;
+  cursor: pointer;
 }
 .menu__link {
   composes: navigation__link;
