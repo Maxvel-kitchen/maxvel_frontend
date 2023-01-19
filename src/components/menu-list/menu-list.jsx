@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
 
-function MenuList() {
-  const location = useLocation();
+function MenuList({ onClose }) {
+  const location = useLocation({ onClose });
   return (
     <div className={style.container}>
       <Title title="Меню" styles={style.title} />
@@ -16,6 +17,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/starter"
+              onClick={onClose}
             >
               Закуски
             </NavLink>
@@ -29,6 +31,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/salad"
+              onClick={onClose}
             >
               Салаты
             </NavLink>
@@ -39,6 +42,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/platter"
+              onClick={onClose}
             >
               Платтеры
             </NavLink>
@@ -49,6 +53,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/main-dish"
+              onClick={onClose}
             >
               Горячее
             </NavLink>
@@ -62,6 +67,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/sauce"
+              onClick={onClose}
             >
               Соусы
             </NavLink>
@@ -72,6 +78,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/kids"
+              onClick={onClose}
             >
               Детское
             </NavLink>
@@ -82,6 +89,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/dessert"
+              onClick={onClose}
             >
               Десерты
             </NavLink>
@@ -92,6 +100,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/drink"
+              onClick={onClose}
             >
               Напитки
             </NavLink>
@@ -102,6 +111,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/station"
+              onClick={onClose}
             >
               Станция
             </NavLink>
@@ -112,6 +122,7 @@ function MenuList() {
                 isActive ? style.link_active : style.link
               }
               to="/service"
+              onClick={onClose}
             >
               Услуги
             </NavLink>
@@ -121,5 +132,7 @@ function MenuList() {
     </div>
   );
 }
-
+MenuList.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
 export default MenuList;
