@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
 import {
@@ -10,7 +11,9 @@ import {
   scroller,
 } from "react-scroll";
 import { useState, useEffect, useCallback } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import New from "../menu-sections/new/new";
+import Carousel from "../carousel/carousel";
 import Starter from "../menu-sections/starter/starter";
 import Salad from "../menu-sections/salad/salad";
 import Platter from "../menu-sections/platter/platter";
@@ -23,6 +26,7 @@ import Station from "../menu-sections/station/station";
 import Service from "../menu-sections/service/service";
 import MenuList from "../menu-list/menu-list";
 import style from "./menu.module.css";
+import ScrollToTop from "../scroll-to-top/scroll-to-top";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -44,31 +48,38 @@ function Menu() {
 
   useEffect(() => checkWidth(), [checkWidth, width]);
 
+  const location = useLocation();
   return (
-    <Element name="menu">
-      <main className={style.menu}>
-        <div className={style.container}>
+    <main className={style.menu}>
+      <div className={style.container}>
+        <Carousel />
+        <Element className={style.menu__box} name="menu">
           <div className={style.sticky}>{menuList && <MenuList />}</div>
+          <ScrollToTop
+            height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
+          />
           <Routes>
+            <Route exact path="/" element={<New />} />
             <Route
               exact
-              path="/"
-              element={<Navigate replace to="/starter" />}
+              path="/menu"
+              element={<Navigate replace to="/menu/new" />}
             />
-            <Route path="/starter" element={<Starter />} />
-            <Route path="/salad" element={<Salad />} />
-            <Route path="/platter" element={<Platter />} />
-            <Route path="/main-dish" element={<MainDish />} />
-            <Route path="/sauce" element={<Sauce />} />
-            <Route path="/kids" element={<Kids />} />
-            <Route path="/dessert" element={<Dessert />} />
-            <Route path="/drink" element={<Drink />} />
-            <Route path="/station" element={<Station />} />
-            <Route path="/service" element={<Service />} />
+            <Route path="/menu/new" element={<New />} />
+            <Route path="/menu/starter" element={<Starter />} />
+            <Route path="/menu/salad" element={<Salad />} />
+            <Route path="/menu/platter" element={<Platter />} />
+            <Route path="/menu/main-dish" element={<MainDish />} />
+            <Route path="/menu/sauce" element={<Sauce />} />
+            <Route path="/menu/kids" element={<Kids />} />
+            <Route path="/menu/dessert" element={<Dessert />} />
+            <Route path="/menu/drink" element={<Drink />} />
+            <Route path="/menu/station" element={<Station />} />
+            <Route path="/menu/service" element={<Service />} />
           </Routes>
-        </div>
-      </main>
-    </Element>
+        </Element>
+      </div>
+    </main>
   );
 }
 

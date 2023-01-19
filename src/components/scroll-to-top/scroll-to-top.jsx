@@ -1,20 +1,22 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable react/jsx-fragments */
-/* eslint-disable react/prop-types */
-import { useEffect, Fragment } from "react";
-import { withRouter } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function ScrollToTop({ history, children }) {
+function ScrollToTop({ height }) {
+  const { pathname } = useLocation();
+
   useEffect(() => {
-    const unlisten = history.listen(() => {
-      window.scrollTo(0, 0);
+    window.scrollTo({
+      top: height,
+      left: 0,
+      behavior: "smooth",
     });
-    return () => {
-      unlisten();
-    };
-  }, []);
+  }, [pathname]);
 
-  return <Fragment>{children}</Fragment>;
+  return null;
 }
-
-export default withRouter(ScrollToTop);
+ScrollToTop.propTypes = {
+  height: PropTypes.number.isRequired,
+};
+export default ScrollToTop;
