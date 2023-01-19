@@ -20,15 +20,21 @@ function Header({ isOpen }) {
   return (
     <header className={style.header}>
       <div className={style.container}>
-        <button
-          onClick={isOpen}
-          className={style.hamburger__menu}
-          type="button"
-          aria-label="Кнопка меню"
-        />
-        <NavLink className={style.navigation__link} to="/">
-          <img className={style.logo__image} alt="Логотип Максвел" src={logo} />
-        </NavLink>
+        <nav className={style.navigation__links}>
+          <button
+            onClick={isOpen}
+            className={style.hamburger__menu}
+            type="button"
+            aria-label="Кнопка меню"
+          />
+          <NavLink className={style.navigation__link} to="/">
+            <img
+              className={style.logo__image}
+              alt="Логотип Максвел"
+              src={logo}
+            />
+          </NavLink>
+        </nav>
         <nav className={style.navigation__links}>
           <NavLink
             className={cn(style.navigation__link, style.menu__link)}

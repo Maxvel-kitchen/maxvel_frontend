@@ -19,6 +19,9 @@ function MenuList({ onClose }) {
             >
               Закуски
             </NavLink>
+            {location.pathname === "/starter" && window.innerWidth > 768 ? (
+              <ScrollButtons />
+            ) : null}
           </li>
           <li className={style.item}>
             <NavLink
@@ -52,6 +55,9 @@ function MenuList({ onClose }) {
             >
               Горячее
             </NavLink>
+            {location.pathname === "/main-dish" && window.innerWidth > 768 ? (
+              <ScrollButtons />
+            ) : null}
           </li>
           <li className={style.item}>
             <NavLink

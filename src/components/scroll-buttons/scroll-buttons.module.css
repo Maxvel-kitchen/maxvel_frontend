@@ -1,0 +1,32 @@
+.items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  row-gap: 18px;
+}
+.link {
+  background-color: var(--footer-bg-color);
+  font-size: var(--mobile-maintext-font);
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.active {
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+@media screen and (min-width: 768px) {
+  .items {
+    gap: 8px;
+    flex-direction: column;
+    margin: 20px 0 0;
+  }
+  .link {
+    color: var(--sub-text-color);
+    font-size: var(--desktop-maintext-font);
+    padding: 0 10px;
+    background-color: transparent;
+  }
+}
