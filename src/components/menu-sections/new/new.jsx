@@ -16,9 +16,6 @@ import style from "./new.module.css";
 function New() {
   return (
     <div className={style.container}>
-      <div className={style.buttons}>
-        {window.innerWidth < 768 ? <ScrollButtons /> : null}
-      </div>
       <Element name="link1" className={style.element}>
         <Title title="Новинки" styles={style.title} />
         <CardList />

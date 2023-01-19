@@ -14,7 +14,7 @@ function App() {
   const setClose = () => {
     setTimeout(() => {
       setIsOpen(false);
-    }, "375");
+    }, 375);
   };
   return (
     <>

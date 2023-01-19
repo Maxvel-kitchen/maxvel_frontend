@@ -24,7 +24,7 @@ class Carousel extends Component {
       pauseOnHover: true,
     };
     return (
-      <div>
+      <div className={style.container}>
         <Slider {...settings}>
           <div>
             <img className={style.image} alt="Изображение блюда" src={demo1} />

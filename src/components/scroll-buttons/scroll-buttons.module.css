@@ -24,7 +24,7 @@
     margin: 20px 0 0;
   }
   .link {
-    color: var(--sub-text-color);
+    color: var(--main-text-color);
     font-size: var(--desktop-maintext-font);
     padding: 0 10px;
     background-color: transparent;

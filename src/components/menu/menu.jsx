@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
 import {
@@ -49,36 +50,36 @@ function Menu() {
 
   const location = useLocation();
   return (
-    <Element name="menu">
-      <main className={style.menu}>
-        <div className={style.container}>
-          <Carousel />
-          <div className={style.menu__box}>
-            <div className={style.sticky}>{menuList && <MenuList />}</div>
-            <ScrollToTop height={location.pathname === "/" ? 0 : 430} />
-            <Routes>
-              <Route exact path="/" element={<New />} />
-              <Route
-                exact
-                path="/menu"
-                element={<Navigate replace to="/menu/new" />}
-              />
-              <Route path="/menu/new" element={<New />} />
-              <Route path="/menu/starter" element={<Starter />} />
-              <Route path="/menu/salad" element={<Salad />} />
-              <Route path="/menu/platter" element={<Platter />} />
-              <Route path="/menu/main-dish" element={<MainDish />} />
-              <Route path="/menu/sauce" element={<Sauce />} />
-              <Route path="/menu/kids" element={<Kids />} />
-              <Route path="/menu/dessert" element={<Dessert />} />
-              <Route path="/menu/drink" element={<Drink />} />
-              <Route path="/menu/station" element={<Station />} />
-              <Route path="/menu/service" element={<Service />} />
-            </Routes>
-          </div>
-        </div>
-      </main>
-    </Element>
+    <main className={style.menu}>
+      <div className={style.container}>
+        <Carousel />
+        <Element className={style.menu__box} name="menu">
+          <div className={style.sticky}>{menuList && <MenuList />}</div>
+          <ScrollToTop
+            height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
+          />
+          <Routes>
+            <Route exact path="/" element={<New />} />
+            <Route
+              exact
+              path="/menu"
+              element={<Navigate replace to="/menu/new" />}
+            />
+            <Route path="/menu/new" element={<New />} />
+            <Route path="/menu/starter" element={<Starter />} />
+            <Route path="/menu/salad" element={<Salad />} />
+            <Route path="/menu/platter" element={<Platter />} />
+            <Route path="/menu/main-dish" element={<MainDish />} />
+            <Route path="/menu/sauce" element={<Sauce />} />
+            <Route path="/menu/kids" element={<Kids />} />
+            <Route path="/menu/dessert" element={<Dessert />} />
+            <Route path="/menu/drink" element={<Drink />} />
+            <Route path="/menu/station" element={<Station />} />
+            <Route path="/menu/service" element={<Service />} />
+          </Routes>
+        </Element>
+      </div>
+    </main>
   );
 }
 
