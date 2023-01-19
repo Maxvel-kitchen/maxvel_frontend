@@ -38,7 +38,7 @@ function Header({ isOpen }) {
         <nav className={style.navigation__links}>
           <NavLink
             className={cn(style.navigation__link, style.menu__link)}
-            to="/"
+            to="/menu"
           >
             {location.pathname === ("/cart" || "/order") ? "Меню" : ""}
           </NavLink>

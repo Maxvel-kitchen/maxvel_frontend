@@ -16,12 +16,24 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/starter"
+              to="/menu/new"
+              onClick={onClose}
+            >
+              Новинки
+            </NavLink>
+          </li>
+          <li className={style.item}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.link_active : style.link
+              }
+              to="/menu/starter"
               onClick={onClose}
             >
               Закуски
             </NavLink>
-            {location.pathname === "/starter" && window.innerWidth > 768 ? (
+            {location.pathname === "/menu/starter" &&
+            window.innerWidth > 768 ? (
               <ScrollButtons />
             ) : null}
           </li>
@@ -30,7 +42,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/salad"
+              to="/menu/salad"
               onClick={onClose}
             >
               Салаты
@@ -41,7 +53,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/platter"
+              to="/menu/platter"
               onClick={onClose}
             >
               Платтеры
@@ -52,12 +64,13 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/main-dish"
+              to="/menu/main-dish"
               onClick={onClose}
             >
               Горячее
             </NavLink>
-            {location.pathname === "/main-dish" && window.innerWidth > 768 ? (
+            {location.pathname === "/menu/main-dish" &&
+            window.innerWidth > 768 ? (
               <ScrollButtons />
             ) : null}
           </li>
@@ -66,7 +79,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/sauce"
+              to="/menu/sauce"
               onClick={onClose}
             >
               Соусы
@@ -77,7 +90,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/kids"
+              to="/menu/kids"
               onClick={onClose}
             >
               Детское
@@ -88,7 +101,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/dessert"
+              to="/menu/dessert"
               onClick={onClose}
             >
               Десерты
@@ -99,7 +112,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/drink"
+              to="/menu/drink"
               onClick={onClose}
             >
               Напитки
@@ -110,7 +123,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/station"
+              to="/menu/station"
               onClick={onClose}
             >
               Станция
@@ -121,7 +134,7 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/service"
+              to="/menu/service"
               onClick={onClose}
             >
               Услуги

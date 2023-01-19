@@ -7,6 +7,7 @@ import Menu from "../menu/menu";
 import Cart from "../cart/cart";
 import Footer from "../footer/footer";
 import Modal from "../modal/modal";
+import ScrollToTop from "../scroll-to-top/scroll-to-top";
 
 function App() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -19,6 +20,7 @@ function App() {
     <>
       <div id="app-modal" />
       <Header isOpen={() => setIsOpen(true)} />
+      <ScrollToTop height={0} />
       <Routes>
         <Route exact path="*" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
