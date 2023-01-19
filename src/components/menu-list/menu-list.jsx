@@ -4,7 +4,7 @@ import style from "./menu-list.module.css";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
 
-function MenuList() {
+function MenuList({ onClose }) {
   const location = useLocation({ onClose });
   return (
     <div className={style.container}>

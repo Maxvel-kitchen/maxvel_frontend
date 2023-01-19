@@ -26,9 +26,9 @@ import style from "./menu.module.css";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [menuList, setMenuList] = useState(true);  
+  const [menuList, setMenuList] = useState(true);
 
-  function windowWidth() {    
+  function windowWidth() {
     setWidth(() => window.innerWidth);
   }
 
