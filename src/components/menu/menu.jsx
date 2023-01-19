@@ -11,6 +11,7 @@ import {
 } from "react-scroll";
 import { useState, useEffect, useCallback } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import Carousel from "../carousel/carousel";
 import Starter from "../menu-sections/starter/starter";
 import Salad from "../menu-sections/salad/salad";
 import Platter from "../menu-sections/platter/platter";
@@ -48,24 +49,27 @@ function Menu() {
     <Element name="menu">
       <main className={style.menu}>
         <div className={style.container}>
-          <div className={style.sticky}>{menuList && <MenuList />}</div>
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={<Navigate replace to="/starter" />}
-            />
-            <Route path="/starter" element={<Starter />} />
-            <Route path="/salad" element={<Salad />} />
-            <Route path="/platter" element={<Platter />} />
-            <Route path="/main-dish" element={<MainDish />} />
-            <Route path="/sauce" element={<Sauce />} />
-            <Route path="/kids" element={<Kids />} />
-            <Route path="/dessert" element={<Dessert />} />
-            <Route path="/drink" element={<Drink />} />
-            <Route path="/station" element={<Station />} />
-            <Route path="/service" element={<Service />} />
-          </Routes>
+          <Carousel />
+          <div className={style.menu__box}>
+            <div className={style.sticky}>{menuList && <MenuList />}</div>
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={<Navigate replace to="/starter" />}
+              />
+              <Route path="/starter" element={<Starter />} />
+              <Route path="/salad" element={<Salad />} />
+              <Route path="/platter" element={<Platter />} />
+              <Route path="/main-dish" element={<MainDish />} />
+              <Route path="/sauce" element={<Sauce />} />
+              <Route path="/kids" element={<Kids />} />
+              <Route path="/dessert" element={<Dessert />} />
+              <Route path="/drink" element={<Drink />} />
+              <Route path="/station" element={<Station />} />
+              <Route path="/service" element={<Service />} />
+            </Routes>
+          </div>
         </div>
       </main>
     </Element>
