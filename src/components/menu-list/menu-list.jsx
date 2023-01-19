@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../title/title";
+import ScrollButtons from "../scroll-buttons/scroll-buttons";
 
-function MenuList({ onClose }) {
+function MenuList() {
+  const location = useLocation({ onClose });
   return (
     <div className={style.container}>
       <Title title="Меню" styles={style.title} />
@@ -19,6 +21,9 @@ function MenuList({ onClose }) {
             >
               Закуски
             </NavLink>
+            {location.pathname === "/starter" && window.innerWidth > 768 ? (
+              <ScrollButtons />
+            ) : null}
           </li>
           <li className={style.item}>
             <NavLink
@@ -52,6 +57,9 @@ function MenuList({ onClose }) {
             >
               Горячее
             </NavLink>
+            {location.pathname === "/main-dish" && window.innerWidth > 768 ? (
+              <ScrollButtons />
+            ) : null}
           </li>
           <li className={style.item}>
             <NavLink

@@ -1,31 +1,22 @@
 .container {
   width: 100%;
 }
+.buttons {
+  position: sticky;
+  top: 65px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  z-index: 1;
+}
 .title {
   margin: 24px 0;
 }
-.items {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  row-gap: 25px;
-  column-gap: 8px;
-  margin-bottom: 60px;
-}
-.link {
-  background-color: var(--footer-bg-color);
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 @media screen and (min-width: 768px) {
   .title {
     margin: 40px 0;
   }
-  .items {
-    gap: 30px;
+  .buttons {
+    display: none;
   }
 }
