@@ -1,8 +1,12 @@
-/* eslint-disable no-unneeded-ternary */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-return-assign */
+
+import React from "react";
+import DatePicker, { registerLocale } from "react-datepicker";
+import ru from "date-fns/locale/ru";
+
+import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import style from "./order-form.module.css";
 import Input from "../input/input";
@@ -20,6 +24,8 @@ function OrderForm() {
   const onSubmit = () => {
     clearErrors(["tel", "email"]);
   };
+  const [startDate, setStartDate] = React.useState(null);
+  registerLocale("ru", ru);
 
   return (
     <div className={style.content}>
@@ -36,12 +42,18 @@ function OrderForm() {
           name="name"
           register={register("name")}
         />
-        <Input
-          styles={!dirtyFields.date ? style.input__nodate : ""}
-          placeholder="Дата мероприятия"
-          type="datetime-local"
-          name="date"
-          register={register("date")}
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          showTimeSelect
+          withPortal
+          timeFormat="HH:mm"
+          dateFormat="d MMMM yyyy HH:mm"
+          minDate={new Date()}
+          placeholderText="Дата мероприятия"
+          className={style.date}
+          calendarClassName={style.calendar}
+          locale="ru"
         />
         <InputValidate
           dirtyFields={dirtyFields.tel}

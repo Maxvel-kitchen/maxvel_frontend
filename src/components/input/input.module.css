@@ -19,10 +19,3 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
-::-webkit-calendar-picker-indicator {
-  color: transparent;
-  background: url(../../images/calendar.svg) no-repeat;
-  background-size: contain;
-  background-position: right;
-  width: 24px;
-}
