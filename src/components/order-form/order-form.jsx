@@ -1,65 +1,106 @@
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-return-assign */
+import { useForm } from "react-hook-form";
 import style from "./order-form.module.css";
 import Input from "../input/input";
+import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
 
 function OrderForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, dirtyFields },
+    clearErrors,
+  } = useForm({ mode: "onChange" });
+  const onSubmit = () => {
+    clearErrors(["tel", "email"]);
+  };
+
   return (
     <div className={style.content}>
       <Title title="Оформить заказ" styles={style.title} />
-      <form className={style.form}>
+      <form
+        className={style.form}
+        onSubmit={handleSubmit(onSubmit)}
+        formNoValidate
+      >
         <Input
-          textarea={false}
+          styles={style.input}
           placeholder="Ваше имя"
           type="text"
-          minLength={3}
-          required={false}
+          name="name"
+          register={register("name")}
         />
         <Input
-          textarea={false}
+          styles={!dirtyFields.date ? style.input__nodate : ""}
+          placeholder="Дата мероприятия"
+          type="datetime-local"
+          name="date"
+          register={register("date")}
+        />
+        <InputValidate
+          dirtyFields={dirtyFields.tel}
           placeholder="Ваш номер телефона"
           type="tel"
-          minLength={3}
-          required
+          name="tel"
+          register={register("tel", {
+            required: true,
+            minLength: 10,
+          })}
+          errors={errors.tel}
+          emptyMessage="Введите номер телефона"
+          incorrectMessage="Номер введён неверно"
         />
-        <Input
-          textarea={false}
+        <InputValidate
+          dirtyFields={dirtyFields.email}
           placeholder="Ваша почта"
           type="email"
-          minLength={3}
-          required
+          name="email"
+          register={register("email", {
+            required: true,
+            pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+            minLength: 8,
+          })}
+          errors={errors.email}
+          emptyMessage="Введите почту"
+          incorrectMessage="Почта введена неверно"
         />
-        <Input
-          textarea={false}
-          placeholder="Дата мероприятия"
-          type="date"
-          minLength={3}
-          required={false}
-        />
-        <Input
-          textarea
-          placeholder="Адрес мероприятия"
-          type="text"
-          minLength={3}
-          required={false}
-        />
-        <Input
-          textarea
-          placeholder="Комментарий"
-          type="text"
-          minLength={0}
-          required={false}
-        />
-        <Button text="Отправить" styles={style.submit} submit />
+
+        <div className={style.textarea}>
+          <Input
+            styles={style.input}
+            placeholder="Адрес мероприятия"
+            type="text"
+            name="adress"
+            register={register("adress")}
+          />
+        </div>
+
+        <div className={style.textarea}>
+          <Input
+            styles={style.input}
+            placeholder="Комментарий"
+            type="text"
+            name="comment"
+            register={register("comment")}
+          />
+        </div>
+        <Button text="Отправить" submit disabled={!isValid} />
         <div className={style.confirmation}>
           <div className={style.confirmation__box}>
             <input
               className={style.confirmation__checkbox}
               type="checkbox"
               id="check"
-              required
+              {...register("checkbox", {
+                required: true,
+              })}
+              formNoValidate
             />
             <label htmlFor="check" />
           </div>

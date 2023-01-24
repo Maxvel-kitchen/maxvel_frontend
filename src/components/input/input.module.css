@@ -1,4 +1,5 @@
 .input {
+  width: 100%;
   border-radius: 30px;
   height: 50px;
   border: 1px solid var(--span-text-color);
@@ -6,20 +7,22 @@
   box-sizing: border-box;
   font-size: var(--mobile-maintext-font);
   line-height: 17px;
+  outline: none;
 }
-.input__textarea {
-  composes: input;
+.input::placeholder {
+  color: #a9a9a9;
+  opacity: 1;
 }
-@media screen and (min-width: 768px) {
-  .input__textarea {
-    grid-column: 1 / 3;
-  }
-}
-::-webkit-datetime-edit {
-  color: dimgray;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }
 ::-webkit-calendar-picker-indicator {
   color: transparent;
-  background: url(../../images/calendar.svg) no-repeat center;
+  background: url(../../images/calendar.svg) no-repeat;
   background-size: contain;
+  background-position: right;
+  width: 24px;
 }

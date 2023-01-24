@@ -1,23 +1,20 @@
 .container {
-  width: 190px;
+  width: 168px;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   flex: none;
 }
-
 .title {
   margin: 0;
 }
-
 .items {
   margin: 35px 0 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
-
 .item {
   list-style: none;
   font-size: 14px;
@@ -26,16 +23,21 @@
 .link {
   color: var(--main-text-color);
   text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 5px 0;
+  box-sizing: border-box;
 }
 .link_active {
-  background-color: var(--main-text-color);
-  color: #fff;
+  background-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
   text-decoration: none;
-  padding: 10px;
-  margin-left: -10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  border-radius: 30px;
+  padding: 5px 0 5px 20px;
+  box-sizing: border-box;
+  margin-left: -20px;
+  border-radius: 20px;
+  width: 100%;
+  display: block;
 }
 @media screen and (min-width: 768px) {
   .item {

@@ -29,8 +29,8 @@
 
 .link {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,21 +38,36 @@
 
 .link_instagram {
   background-image: url(../../images/instagram.svg);
+  transition: background-image 0.3s ease-in-out;
 }
 
 .link_telegram {
   background-image: url(../../images/telegram.svg);
+  transition: background-image 0.3s ease-in-out;
 }
 
 .link_whatsapp {
   background-image: url(../../images/whatsApp.svg);
+  transition: background-image 0.3s ease-in-out;
 }
 
+.link_instagram:hover {
+  background-image: url(../../images/instagram-hover.svg);
+}
+
+.link_telegram:hover {
+  background-image: url(../../images/telegram-hover.svg);
+}
+
+.link_whatsapp:hover {
+  background-image: url(../../images/whatsApp-hover.svg);
+}
 .text {
   margin: 0;
   font-size: 16px;
   line-height: 19px;
   color: var(--span-text-color);
+  text-decoration: none;
 }
 
 .map {
@@ -77,11 +92,12 @@
   flex-direction: column;
   gap: 15px;
 }
-
-.submit {
-  height: 50px;
+.input_error {
+  border-color: var(--error-color);
 }
-
+.input_ok {
+  border-color: var(--ok-color);
+}
 @media screen and (max-width: 900px) {
   .container {
     padding: 36px 16px 44px;

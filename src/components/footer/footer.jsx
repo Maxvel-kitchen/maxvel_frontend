@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable no-unused-vars */
@@ -10,20 +11,28 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import { useForm } from "react-hook-form";
 import Map from "../map/map";
 import Input from "../input/input";
+import InputValidate from "../input-validate/input-validate";
 import Button from "../button/button";
 import style from "./footer.module.css";
 
 function Footer() {
+  const {
+    register,
+    formState: { errors, isValid, dirtyFields },
+  } = useForm({ mode: "onChange" });
   return (
     <footer className={style.footer}>
       <div className={style.container}>
         <Element name="contacts">
           <div className={style.contacts}>
-            <p className={style.text}>+35799981120</p>
+            <a className={style.text} href="tel:+35799981120">
+              +35799981120
+            </a>
             <ul className={style.items}>
-              <li className={style.item}>
+              <li className={style.link}>
                 <a
                   target="_blank"
                   className={`${style.link} ${style.link_instagram}`}
@@ -62,21 +71,28 @@ function Footer() {
             Ничего не хочу решать, просто позвоните мне:
           </p>
           <fieldset className={style.fieldset}>
-            <Input
-              textarea={false}
+            <InputValidate
+              dirtyFields={dirtyFields.tel}
               placeholder="Ваш номер телефона"
-              type="text"
-              minLength={8}
-              required
+              type="tel"
+              name="tel"
+              register={register("tel", {
+                required: true,
+                minLength: 10,
+              })}
+              errors={errors.tel}
+              emptyMessage="Введите номер телефона"
+              incorrectMessage="Номер введён неверно"
             />
+
             <Input
-              textarea={false}
+              styles={style.input}
               placeholder="Комментарий"
               type="text"
-              minLength={100}
-              required
+              name="comment"
+              register={register("comment")}
             />
-            <Button text="Отправить" styles={style.submit} submit />
+            <Button text="Отправить" submit disabled={!isValid} />
           </fieldset>
         </form>
       </div>

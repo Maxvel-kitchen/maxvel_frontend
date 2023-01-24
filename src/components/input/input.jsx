@@ -1,23 +1,25 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from "prop-types";
+import cn from "classnames";
 import style from "./input.module.css";
 
-function Input({ textarea, placeholder, type, minLength, required }) {
+function Input({ styles, placeholder, type, name, register }) {
   return (
     <input
-      className={textarea ? style.input__textarea : style.input}
+      className={cn(style.input, styles)}
       placeholder={placeholder}
       type={type}
-      minLength={minLength}
-      required={required}
+      name={name}
+      {...register}
+      formNoValidate
     />
   );
 }
 Input.propTypes = {
-  // eslint-disable-next-line react/no-typos
-  textarea: PropTypes.bool.isRequired,
+  styles: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  minLength: PropTypes.number.isRequired,
-  required: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
 };
 export default Input;

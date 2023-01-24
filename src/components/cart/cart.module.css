@@ -1,15 +1,15 @@
 .cart {
   width: 100%;
 }
-.content {
-  padding: 0 var(--mobile-block-padding);
+.container {
+  padding: 25px var(--mobile-block-padding) 50px;
   box-sizing: border-box;
   max-width: 625px;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
-  .content {
-    padding: 0 var(--desktop-block-padding);
+  .container {
+    padding: 40px var(--desktop-block-padding) 200px;
     max-width: var(--desktop-container-width);
   }
 }

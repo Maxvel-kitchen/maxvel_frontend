@@ -1,6 +1,3 @@
-:root {
-  --header-height: 147px;
-}
 .header {
   position: sticky;
   top: 0;
@@ -9,7 +6,7 @@
   z-index: 2;
 }
 .container {
-  max-width: 625px;
+  max-width: 100%;
   padding: 7px var(--mobile-block-padding);
   box-sizing: border-box;
   margin: 0 auto;
@@ -40,9 +37,9 @@
   composes: navigation__link;
   width: 25px;
   height: 25px;
-
   background-image: url(../../images/cart.svg);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .logo__image {
   width: 50px;
