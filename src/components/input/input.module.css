@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-size: var(--mobile-maintext-font);
   line-height: 17px;
+  font-family: "Inter";
 }
 .input__textarea {
   composes: input;
