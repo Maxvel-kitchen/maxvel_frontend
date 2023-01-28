@@ -11,6 +11,7 @@ import demo1 from "../../images/demo1.jpg";
 import demo2 from "../../images/demo2.jpg";
 import demo3 from "../../images/demo3.jpg";
 import demo4 from "../../images/demo4.jpg";
+import demo5 from "../../images/demo5.jpg";
 
 class Carousel extends Component {
   render() {
@@ -20,8 +21,11 @@ class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 5000,
-      pauseOnHover: true,
+      autoplaySpeed: 4000,
+      arrows: false,
+      pauseOnHover: false,
+      speed: 600,
+      swipeToSlide: true,
     };
     return (
       <div className={style.container}>
@@ -37,6 +41,9 @@ class Carousel extends Component {
           </div>
           <div>
             <img className={style.image} alt="Изображение блюда" src={demo4} />
+          </div>
+          <div>
+            <img className={style.image} alt="Изображение блюда" src={demo5} />
           </div>
         </Slider>
       </div>

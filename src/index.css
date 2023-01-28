@@ -3,11 +3,14 @@
 
 :root {
   --main-bg-color: #fff;
-  --secondary-bg-color: #d9d9d9;
+  --secondary-bg-color: #dbe5ff;
   --footer-bg-color: #e6e6e6;
   --main-text-color: #4d4d4d;
   --span-text-color: #252525;
+  --button-text-color: #001027;
   --sub-text-color: #a9a9a9;
+  --ok-color: #29a71a;
+  --error-color: #c9284c;
   --desktop-container-width: 1440px;
   --desktop-block-padding: 80px;
   --mobile-block-padding: 16px;

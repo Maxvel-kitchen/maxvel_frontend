@@ -9,7 +9,7 @@ function MenuList({ onClose }) {
   return (
     <div className={style.container}>
       <Title title="Меню" styles={style.title} />
-      <nav>
+      <nav className={style.links}>
         <ul className={style.items}>
           <li className={style.item}>
             <NavLink
