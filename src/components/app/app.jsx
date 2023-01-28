@@ -1,10 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import React from "react";
-// eslint-disable-next-line no-unused-vars
-import style from "./app.module.css";
 import Header from "../header/header";
 import Menu from "../menu/menu";
 import Cart from "../cart/cart";
+import Order from "../order/order";
 import Footer from "../footer/footer";
 import Modal from "../modal/modal";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
@@ -16,6 +15,7 @@ function App() {
       setIsOpen(false);
     }, 375);
   };
+  const location = useLocation();
   return (
     <>
       <div id="app-modal" />
@@ -24,7 +24,11 @@ function App() {
       <Routes>
         <Route exact path="*" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/order" />
+        <Route path="/order" element={<Order />} />
+        <Route
+          path={!location === "/menu" || "/cart" || "/order"}
+          element={<Navigate replace exact path="*" />}
+        />
       </Routes>
       <Footer />
       <Modal isOpen={isOpen} onClose={setClose} />
