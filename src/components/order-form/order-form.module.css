@@ -45,6 +45,7 @@
 .confirmation__text {
   margin: 0;
   color: var(--sub-text-color);
+  font-family: "Roboto";
   font-size: var(--desktop-subtext-font);
   line-height: 20px;
 }

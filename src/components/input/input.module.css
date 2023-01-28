@@ -5,9 +5,9 @@
   border: 1px solid var(--span-text-color);
   padding: 15px;
   box-sizing: border-box;
-
   line-height: 17px;
   outline: none;
+  font-family: "Inter";
 }
 .input::placeholder {
   color: #a9a9a9;

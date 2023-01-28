@@ -5,6 +5,7 @@
   color: var(--button-text-color);
   font-size: var(--desktop-maintext-font);
   line-height: 19px;
+  font-family: "Montserrat";
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
 }
