@@ -1,7 +1,12 @@
+import OrderItem from "../order-item/order-item";
 import style from "./order-list.module.css";
 
 function OrderList() {
-  return <div className={style.order}>Детали заказа</div>;
+  return (
+    <ul className={style.list}>
+      <OrderItem />
+    </ul>
+  );
 }
 
 export default OrderList;

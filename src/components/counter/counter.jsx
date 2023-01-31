@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import style from "./counter.module.css";
@@ -38,7 +39,7 @@ function Counter({ showItem }) {
 }
 
 Counter.propTypes = {
-  showItem: PropTypes.func.isRequired,
+  showItem: PropTypes.func,
 };
 
 export default Counter;
