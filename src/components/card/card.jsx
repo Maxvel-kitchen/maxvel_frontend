@@ -1,36 +1,53 @@
 /* eslint-disable react/self-closing-comp */
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import style from "./card.module.css";
 import Counter from "../counter/counter";
+import { increment } from "../../services/actions/counter-actions";
+import { getCartTotal } from "../../services/reducers/cart-slice";
 
-function Card() {  
-  const [button, setButton] = useState(true);
+function Card({ id, title, price, newer, amount }) {
+  const [button, setButton] = useState();
 
-  function hideItem() {
-    setButton(false);
-  }
-
-  function showItem() {
-    setButton(true);
-  }
-
+  const counter = useSelector((state = 1) => state.counter);
+  useEffect(() => {
+    if (counter < 1) {
+      setButton(true);
+    }
+    if (counter > 0) {
+      setButton(false);
+    }
+  }, [counter, setButton]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, []);
   return (
     <li className={style.card}>
-      {false && <p className={style.tag}>New</p>}
+      {newer && <p className={style.tag}>New</p>}
       <div className={style.image}></div>
-      <p className={style.title}>Длинное название блюда 5</p>
+      <p className={style.title}>{title}</p>
       <div className={style.container}>
-        <p className={style.price}>3500 €</p>
+        <p className={style.price}>{`${price} €`}</p>
         {button ? (
-          <button onClick={hideItem} className={style.button} type="button">
+          <button
+            onClick={() => dispatch(increment())}
+            className={style.button}
+            type="button"
+          >
             Добавить
           </button>
         ) : (
-          <Counter showItem={() => showItem()} />
+          <Counter counter={counter} />
         )}
       </div>
     </li>
   );
 }
-
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  newer: PropTypes.bool.isRequired,
+};
 export default Card;

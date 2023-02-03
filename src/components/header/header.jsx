@@ -8,6 +8,7 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
@@ -16,7 +17,7 @@ import logo from "../../images/logo.svg";
 
 function Header({ isOpen }) {
   const location = useLocation();
-
+  const { totalCount } = useSelector((state) => state.cart);
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -52,7 +53,9 @@ function Header({ isOpen }) {
           >
             Контакты
           </Link>
-          <NavLink className={style.cart__link} to="/cart" />
+          <NavLink className={style.cart__link} to="/cart">
+            <div className={style.badge}>{totalCount}</div>
+          </NavLink>
         </nav>
       </div>
     </header>

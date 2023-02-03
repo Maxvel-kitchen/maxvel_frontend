@@ -1,44 +1,46 @@
-import { useState, useEffect } from "react";
+/* eslint-disable import/order */
+
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
+import {
+  decrement,
+  increment,
+  set,
+} from "../../services/actions/counter-actions";
+
 import style from "./counter.module.css";
 
-function Counter({ showItem }) {
-  const [counter, setCounter] = useState(1);
-
-  function increaseCounter() {
-    setCounter((prevValue) => prevValue + 1);
-  }
-
-  function decreaseCounter() {
-    setCounter((prevValue) => prevValue - 1);
-  }
-
-  useEffect(() => {
-    if (counter === 0) {
-      showItem();
-    }
-  }, [counter, showItem]);
+function Counter({ counter }) {
+  const dispatch = useDispatch();
 
   return (
     <div className={style.container}>
-      <button onClick={decreaseCounter} className={style.button} type="button">
+      <button
+        onClick={() => dispatch(decrement())}
+        className={style.button}
+        type="button"
+      >
         -
       </button>
       <input
-        onChange={(e) => setCounter(Number(e.target.value))}
+        onChange={(e) => dispatch(set(e.target.value))}
         className={style.input}
-        type="text"
+        type="number"
         value={counter}
+        max="999"
+        min="0"
       />
-      <button onClick={increaseCounter} className={style.button} type="button">
+      <button
+        onClick={() => dispatch(increment())}
+        className={style.button}
+        type="button"
+      >
         +
       </button>
     </div>
   );
 }
-
 Counter.propTypes = {
-  showItem: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired,
 };
-
 export default Counter;
