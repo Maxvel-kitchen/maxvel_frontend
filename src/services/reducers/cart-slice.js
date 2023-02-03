@@ -1,12 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
-
-const data = [
-  { id: 876, title: "Макарун", price: 55, quantity: 0, newer: true },
-  { id: 876, title: "Маун", price: 5, quantity: 0 },
-  { id: 876, title: "Макар", price: 85, quantity: 0 },
-  { id: 876, title: "Мкаун", price: 51, quantity: 0 },
-];
+import { data } from "../../utils/constants";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -30,7 +24,23 @@ const cartSlice = createSlice({
       state.totalAmount = totalAmount;
       state.totalCount = totalCount;
     },
+    increase: (state, action) => {
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, amount: item.amount + 1 };
+        }
+        return item;
+      });
+    },
+    decrease: (state, action) => {
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, amount: item.amount - 1 };
+        }
+        return item;
+      });
+    },
   },
 });
-export const { getCartTotal } = cartSlice.actions;
+export const { getCartTotal, increase, decrease } = cartSlice.actions;
 export default cartSlice.reducer;

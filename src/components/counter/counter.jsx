@@ -2,21 +2,17 @@
 
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import {
-  decrement,
-  increment,
-  set,
-} from "../../services/actions/counter-actions";
-
+import { set } from "../../services/actions/counter-actions";
+import { increase, decrease } from "../../services/reducers/cart-slice";
 import style from "./counter.module.css";
 
-function Counter({ counter }) {
+function Counter({ id, amount }) {
   const dispatch = useDispatch();
 
   return (
     <div className={style.container}>
       <button
-        onClick={() => dispatch(decrement())}
+        onClick={() => dispatch(decrease(id))}
         className={style.button}
         type="button"
       >
@@ -26,12 +22,12 @@ function Counter({ counter }) {
         onChange={(e) => dispatch(set(e.target.value))}
         className={style.input}
         type="number"
-        value={counter}
+        value={amount}
         max="999"
         min="0"
       />
       <button
-        onClick={() => dispatch(increment())}
+        onClick={() => dispatch(increase(id))}
         className={style.button}
         type="button"
       >
@@ -41,6 +37,7 @@ function Counter({ counter }) {
   );
 }
 Counter.propTypes = {
-  counter: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
 };
 export default Counter;

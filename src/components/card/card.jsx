@@ -1,28 +1,19 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import style from "./card.module.css";
 import Counter from "../counter/counter";
-import { increment } from "../../services/actions/counter-actions";
 import { getCartTotal } from "../../services/reducers/cart-slice";
 
 function Card({ id, title, price, newer, amount }) {
-  const [button, setButton] = useState();
-
-  const counter = useSelector((state = 1) => state.counter);
-  useEffect(() => {
-    if (counter < 1) {
-      setButton(true);
-    }
-    if (counter > 0) {
-      setButton(false);
-    }
-  }, [counter, setButton]);
+  const { items, totalCount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartTotal());
-  }, []);
+  }, [items]);
   return (
     <li className={style.card}>
       {newer && <p className={style.tag}>New</p>}
@@ -30,24 +21,16 @@ function Card({ id, title, price, newer, amount }) {
       <p className={style.title}>{title}</p>
       <div className={style.container}>
         <p className={style.price}>{`${price} €`}</p>
-        {button ? (
-          <button
-            onClick={() => dispatch(increment())}
-            className={style.button}
-            type="button"
-          >
-            Добавить
-          </button>
-        ) : (
-          <Counter counter={counter} />
-        )}
+        <Counter amount={amount} id={id} />
       </div>
     </li>
   );
 }
 Card.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   newer: PropTypes.bool.isRequired,
+  amount: PropTypes.number.isRequired,
 };
 export default Card;

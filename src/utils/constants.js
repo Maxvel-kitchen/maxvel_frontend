@@ -43,4 +43,10 @@ const orderFormInputs = [
   },
 ];
 
-export default orderFormInputs;
+const data = [
+  { id: 876, title: "Макарун", price: 55, amount: 0, newer: true },
+  { id: 876, title: "Маун", price: 5, amount: 0 },
+  { id: 876, title: "Макар", price: 85, amount: 0 },
+  { id: 876, title: "Мкаун", price: 51, amount: 0 },
+];
+export { orderFormInputs, data };
