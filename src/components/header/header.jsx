@@ -8,16 +8,16 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
-import { useSelector } from "react-redux";
+
 import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import style from "./header.module.css";
 import logo from "../../images/logo.svg";
 
-function Header({ isOpen }) {
+function Header({ isOpen, totalCount }) {
   const location = useLocation();
-  const { totalCount } = useSelector((state) => state.cart);
+
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -63,5 +63,6 @@ function Header({ isOpen }) {
 }
 Header.propTypes = {
   isOpen: PropTypes.func.isRequired,
+  totalCount: PropTypes.number.isRequired,
 };
 export default Header;

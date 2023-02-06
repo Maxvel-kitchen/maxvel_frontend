@@ -1,13 +1,22 @@
 .item {
+  max-width: 1140px;
   display: flex;
-  align-items: flex-start;
+  gap: 30px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  gap: 5px;
 }
 
 .container {
+  width: 924px;
   display: flex;
-  flex-direction: column;
-  max-width: 298px;
-  gap: 5px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .title {

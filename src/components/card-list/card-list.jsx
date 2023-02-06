@@ -5,8 +5,9 @@ import style from "./card-list.module.css";
 function CardList() {
   return (
     <ul className={style.cards}>
-      {data.map((item) => (
+      {data?.map((item) => (
         <Card
+          item={item}
           key={item.id}
           id={item.id}
           image={item.image}

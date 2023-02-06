@@ -1,3 +1,5 @@
+import image1 from "../images/demo6.png";
+
 const orderFormInputs = [
   {
     id: "name",
@@ -44,9 +46,26 @@ const orderFormInputs = [
 ];
 
 const data = [
-  { id: 876, title: "Макарун", price: 55, amount: 0, newer: true },
-  { id: 876, title: "Маун", price: 5, amount: 0 },
-  { id: 876, title: "Макар", price: 85, amount: 0 },
-  { id: 876, title: "Мкаун", price: 51, amount: 0 },
+  {
+    id: 876,
+    image: image1,
+    title: "Мини круассан с лососем, рукколой и цитрусовой филадельфией",
+    price: 5,
+    amount: 0,
+    newer: true,
+  },
+  {
+    id: 76,
+    title: "Бородинский тост с форшмаком из сельди и перепелиным яйцом",
+    price: 2,
+    amount: 0,
+  },
+  { id: 809, title: "Оладушки с лососем", price: 3, amount: 0 },
+  {
+    id: 602,
+    title: "Профитроли с муссом из копченого лосося и икрой ",
+    price: 4,
+    amount: 0,
+  },
 ];
 export { orderFormInputs, data };

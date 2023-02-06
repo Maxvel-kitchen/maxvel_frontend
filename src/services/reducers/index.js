@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import localStorage from "redux-persist/lib/storage";
 // import mainMenuReducer from "./main-menu-reducer";
 // import counterReducer from "./counter-reducer";
-import cartReducer from "./cart-slice";
+import { cartReducer } from "./cart-slice";
 
 /* Объединяем редьюсеры в один общий редьюсер */
 const rootReducer = combineReducers({
