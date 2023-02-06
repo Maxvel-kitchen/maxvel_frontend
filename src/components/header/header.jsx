@@ -54,7 +54,11 @@ function Header({ isOpen, totalCount }) {
             Контакты
           </Link>
           <NavLink className={style.cart__link} to="/cart">
-            <div className={style.badge}>{totalCount}</div>
+            {totalCount === 0 ? (
+              ""
+            ) : (
+              <div className={style.badge}>{totalCount}</div>
+            )}
           </NavLink>
         </nav>
       </div>

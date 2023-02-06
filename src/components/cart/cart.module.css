@@ -7,6 +7,10 @@
   max-width: 625px;
   margin: 0 auto;
 }
+.empty {
+  margin: 0 auto;
+  text-align: center;
+}
 @media screen and (min-width: 768px) {
   .container {
     padding: 40px var(--desktop-block-padding) 200px;

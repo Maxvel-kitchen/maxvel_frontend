@@ -13,24 +13,30 @@ import img from "../../images/demo6.png";
 function OrderItem({ id, title, price, amount }) {
   const dispatch = useDispatch();
 
+  function countPrice(itemPrice, itemAmount) {
+    return itemPrice * itemAmount;
+  }
+
   return (
     <li className={style.item}>
       <img src={img} alt={title} className={style.image} />
-      <div className={style.container}>
-        <div className={style.description}>
-          <p className={style.title}>{title}</p>
-          <p className={cn(style.price, style.price_size_small)}>
-            {`${price} € / шт`}
-          </p>
-        </div>
-        <Counter amount={amount} id={id} />
-        <p className={cn(style.price, style.price_size_big)}>€</p>
-        <button
-          className={style.button}
-          type="button"
-          onClick={() => dispatch(remove(id))}
-        ></button>
+      <div className={style.description}>
+        <p className={style.title}>{title}</p>
+        <p className={cn(style.price, style.price_size_small)}>
+          {`${price} € / шт`}
+        </p>
       </div>
+      <div className={style.counter}>
+        <Counter amount={amount} id={id} />
+      </div>
+      <p className={cn(style.price, style.price_size_big)}>
+        {countPrice(price, amount)}&nbsp;€
+      </p>
+      <button
+        className={style.button}
+        type="button"
+        onClick={() => dispatch(remove(id))}
+      />
     </li>
   );
 }
