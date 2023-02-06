@@ -60,7 +60,7 @@
 }
 @media screen and (max-width: 768px) {
   .item {
-    gap: 0;
+    row-gap: 0;
     column-gap: 12px;
     max-width: 500px;
     grid-template-columns: repeat(3, minmax(min-content, 1fr));
@@ -70,8 +70,8 @@
     flex-direction: column;
   }
   .description {
-    width: 100%;
     max-width: 100%;
+    min-width: 160px;
   }
   .title {
     font-size: 11px;
