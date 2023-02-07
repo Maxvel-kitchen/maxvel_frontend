@@ -1,3 +1,5 @@
+import image1 from "../images/demo6.png";
+
 const orderFormInputs = [
   {
     id: "name",
@@ -43,4 +45,27 @@ const orderFormInputs = [
   },
 ];
 
-export default orderFormInputs;
+const data = [
+  {
+    id: 876,
+    image: image1,
+    title: "Мини круассан с лососем, рукколой и цитрусовой филадельфией",
+    price: 5,
+    amount: 0,
+    newer: true,
+  },
+  {
+    id: 76,
+    title: "Бородинский тост с форшмаком из сельди и перепелиным яйцом",
+    price: 2,
+    amount: 0,
+  },
+  { id: 809, title: "Оладушки с лососем", price: 3, amount: 0 },
+  {
+    id: 602,
+    title: "Профитроли с муссом из копченого лосося и икрой ",
+    price: 4,
+    amount: 0,
+  },
+];
+export { orderFormInputs, data };

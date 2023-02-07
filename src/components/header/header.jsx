@@ -8,13 +8,14 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+
 import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import style from "./header.module.css";
 import logo from "../../images/logo.svg";
 
-function Header({ isOpen }) {
+function Header({ isOpen, totalCount }) {
   const location = useLocation();
 
   return (
@@ -52,7 +53,13 @@ function Header({ isOpen }) {
           >
             Контакты
           </Link>
-          <NavLink className={style.cart__link} to="/cart" />
+          <NavLink className={style.cart__link} to="/cart">
+            {totalCount === 0 ? (
+              ""
+            ) : (
+              <div className={style.badge}>{totalCount}</div>
+            )}
+          </NavLink>
         </nav>
       </div>
     </header>
@@ -60,5 +67,6 @@ function Header({ isOpen }) {
 }
 Header.propTypes = {
   isOpen: PropTypes.func.isRequired,
+  totalCount: PropTypes.number.isRequired,
 };
 export default Header;

@@ -1,45 +1,39 @@
-/* eslint-disable react/require-default-props */
-import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
+import { increase, decrease } from "../../services/reducers/cart-slice";
 import style from "./counter.module.css";
 
-function Counter({ showItem }) {
-  const [counter, setCounter] = useState(1);
-
-  function increaseCounter() {
-    setCounter((prevValue) => prevValue + 1);
-  }
-
-  function decreaseCounter() {
-    setCounter((prevValue) => prevValue - 1);
-  }
-
-  useEffect(() => {
-    if (counter === 0) {
-      showItem();
-    }
-  }, [counter, showItem]);
+function Counter({ id, amount }) {
+  const dispatch = useDispatch();
 
   return (
     <div className={style.container}>
-      <button onClick={decreaseCounter} className={style.button} type="button">
+      <button
+        onClick={() => dispatch(decrease(id))}
+        className={style.button}
+        type="button"
+      >
         -
       </button>
       <input
-        onChange={(e) => setCounter(Number(e.target.value))}
         className={style.input}
-        type="text"
-        value={counter}
+        type="number"
+        value={amount}
+        max="999"
+        min="0"
       />
-      <button onClick={increaseCounter} className={style.button} type="button">
+      <button
+        onClick={() => dispatch(increase(id))}
+        className={style.button}
+        type="button"
+      >
         +
       </button>
     </div>
   );
 }
-
 Counter.propTypes = {
-  showItem: PropTypes.func,
+  id: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
 };
-
 export default Counter;

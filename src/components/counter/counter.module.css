@@ -1,6 +1,8 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 5px;
+  width: 100%;
 }
 
 .button {
@@ -27,17 +29,18 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    margin-top: 22px;
-  }
-
-  .button {
-    width: 28px;
-    height: 28px;
-  }
-
   .input {
-    margin: 0 20px;
-    max-width: 55px;
+    font-size: 11px;
+    line-height: 13px;
   }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
