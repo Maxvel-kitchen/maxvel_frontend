@@ -9,6 +9,7 @@
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
 }
+
 .submit {
   height: 50px;
 }

@@ -1,15 +1,29 @@
+/* eslint-disable react/prop-types */
+import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import { increase, decrease } from "../../services/reducers/cart-slice";
+import {
+  increase,
+  decrease,
+  removeItem,
+} from "../../services/reducers/cart-slice";
 import style from "./counter.module.css";
 
-function Counter({ id, amount }) {
+function Counter({ id, amount, styles, handleDelete }) {
   const dispatch = useDispatch();
-
+  const location = useLocation();
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${styles}`}>
       <button
-        onClick={() => dispatch(decrease(id))}
+        onClick={() => {
+          if (amount === 1 && location.pathname === "/cart") {
+            dispatch(decrease(id));
+            handleDelete();
+          } else {
+            dispatch(decrease(id));
+            dispatch(removeItem(id));
+          }
+        }}
         className={style.button}
         type="button"
       >
