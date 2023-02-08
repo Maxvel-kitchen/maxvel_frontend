@@ -1,0 +1,122 @@
+.item {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(min-content, 1fr));
+  align-items: start;
+  justify-items: center;
+  gap: 30px;
+}
+
+.item_deleted {
+  opacity: 0.6;
+}
+
+.image {
+  max-width: 190px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 290px;
+  gap: 5px;
+}
+
+.title {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 14px;
+  line-height: 113.9%;
+  color: var(--main-text-color);
+}
+
+.price {
+  margin: 0;
+  font-size: 12px;
+  line-height: 114%;
+  color: var(--span-text-color);
+}
+
+.price_size_small {
+  padding: 5px 0;
+}
+
+.price_size_big {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+.button_return {
+  padding: 5px 15px;
+  box-sizing: border-box;
+}
+.button_delete {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url(../../images/trash.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  justify-self: end;
+}
+@media screen and (max-width: 768px) {
+  .item {
+    row-gap: 0;
+    column-gap: 12px;
+    max-width: 500px;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    justify-items: left;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .description {
+    max-width: 100%;
+    min-width: 160px;
+  }
+  .title {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .counter {
+    align-self: flex-end;
+    grid-column: 2 / 3;
+    max-width: 90px;
+    max-height: 22px;
+  }
+  .price_size_small {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .price_size_big {
+    align-self: flex-start;
+    font-size: 14px;
+    line-height: 17px;
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .image {
+    grid-row: 1 / 4;
+    width: 132px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .button_return {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .button_delete {
+    width: 16px;
+    height: 16px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    align-self: flex-start;
+  }
+}

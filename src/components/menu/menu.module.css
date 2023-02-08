@@ -1,0 +1,26 @@
+.sticky {
+  height: 100%;
+  background-color: transparent;
+  position: sticky;
+  top: 200px;
+  z-index: 1;
+}
+.container {
+  margin: 0 auto;
+}
+.menu__box {
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 28px 16px 48px;
+  max-width: var(--desktop-container-width);
+}
+.title {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .menu__box {
+    gap: 30px;
+    padding: 46px 80px 58px;
+  }
+}

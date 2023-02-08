@@ -1,0 +1,19 @@
+.cart {
+  width: 100%;
+}
+.container {
+  padding: 25px var(--mobile-block-padding) 50px;
+  box-sizing: border-box;
+  max-width: 625px;
+  margin: 0 auto;
+}
+.empty {
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 40px var(--desktop-block-padding) 200px;
+    max-width: var(--desktop-container-width);
+  }
+}

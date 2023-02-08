@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+}
+.buttons {
+  position: sticky;
+  top: 60px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  z-index: 1;
+}
+.title {
+  margin: 24px 0;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    margin: 40px 0;
+  }
+  .buttons {
+    display: none;
+  }
+}

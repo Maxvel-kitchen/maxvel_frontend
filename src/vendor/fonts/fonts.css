@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Inter";
+  src: url(./Inter-Regular.woff), url(./Inter-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(./Inter-SemiBold.woff), url(./Inter-SemiBold.woff2);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./Montserrat-Regular.woff), url(./Montserrat-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(./Montserrat-Medium.woff), url(./Montserrat-Medium.woff2);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./Roboto-Regular.woff), url(./Roboto-Regular.woff2);
+  font-weight: 400;
+}
