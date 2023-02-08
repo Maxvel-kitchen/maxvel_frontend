@@ -1,12 +1,14 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/self-closing-comp */
+/* eslint-disable consistent-return */
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable no-irregular-whitespace */
+
+import React, { useEffect } from "react";
 import cn from "classnames";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import Counter from "../counter/counter";
-import { remove } from "../../services/reducers/cart-slice";
+import Button from "../button/button";
+import { remove, returnItem } from "../../services/reducers/cart-slice";
 import style from "./order-item.module.css";
 import img from "../../images/demo6.png";
 
@@ -17,8 +19,28 @@ function OrderItem({ id, title, price, amount }) {
     return itemPrice * itemAmount;
   }
 
+  const [deleted, setDeleted] = React.useState(false);
+
+  useEffect(() => {
+    if (deleted) {
+      const timerId = setTimeout(() => dispatch(remove(id)), 5000);
+      return () => {
+        clearTimeout(timerId);
+      };
+    }
+  }, [deleted]);
+
+  function handleDelete() {
+    if (deleted) {
+      setDeleted(false);
+      dispatch(returnItem(id));
+    } else {
+      setDeleted(true);
+    }
+  }
+
   return (
-    <li className={style.item}>
+    <li className={cn(style.item, deleted ? style.item_deleted : "")}>
       <img src={img} alt={title} className={style.image} />
       <div className={style.description}>
         <p className={style.title}>{title}</p>
@@ -27,15 +49,23 @@ function OrderItem({ id, title, price, amount }) {
         </p>
       </div>
       <div className={style.counter}>
-        <Counter amount={amount} id={id} />
+        {deleted ? (
+          <Button
+            text="Вернуть"
+            styles={style.button_return}
+            onClick={() => handleDelete()}
+          />
+        ) : (
+          <Counter amount={amount} id={id} handleDelete={handleDelete} />
+        )}
       </div>
       <p className={cn(style.price, style.price_size_big)}>
         {countPrice(price, amount)}&nbsp;€
       </p>
       <button
-        className={style.button}
+        className={style.button_delete}
         type="button"
-        onClick={() => dispatch(remove(id))}
+        onClick={() => handleDelete()}
       />
     </li>
   );

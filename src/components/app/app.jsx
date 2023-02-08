@@ -18,7 +18,7 @@ function App() {
     }, 375);
   };
 
-  const { items, totalCount } = useSelector((state) => state.cart);
+  const { items, count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartTotal());
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <div id="app-modal" />
-      <Header isOpen={() => setIsOpen(true)} totalCount={totalCount} />
+      <Header isOpen={() => setIsOpen(true)} count={count} />
       <ScrollToTop height={0} />
       <Routes>
         <Route exact path="*" element={<Menu />} />

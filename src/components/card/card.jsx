@@ -3,14 +3,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import style from "./card.module.css";
 import Counter from "../counter/counter";
-import { addToCart, getCartTotal } from "../../services/reducers/cart-slice";
+import Button from "../button/button";
+import { addToCart } from "../../services/reducers/cart-slice";
 
 function Card({ item, id, title, price, newer, amount }) {
   const dispatch = useDispatch();
+  const { items, totalAmount } = useSelector((state) => state.cart);
+  const thisItem = items.find((item) => item.id === id);
 
   return (
     <li className={style.card}>
@@ -19,18 +21,19 @@ function Card({ item, id, title, price, newer, amount }) {
       <p className={style.title}>{title}</p>
       <div className={style.container}>
         <p className={style.price}>{`${price} €`}</p>
-        {amount === 0 ? (
-          <button
-            onClick={() => {
-              dispatch(addToCart(item));
-            }}
-            className={style.button}
-            type="button"
-          >
-            Добавить
-          </button>
+        {thisItem ? (
+          <Counter
+            amount={thisItem ? thisItem.amount : amount}
+            id={id}
+            styles={style.counter}
+          />
         ) : (
-          <Counter amount={amount} id={id} />
+          <Button
+            text="Добавить"
+            onClick={() => dispatch(addToCart(item))}
+            styles={style.button}
+            type="button"
+          />
         )}
       </div>
     </li>

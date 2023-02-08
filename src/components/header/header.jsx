@@ -15,7 +15,7 @@ import cn from "classnames";
 import style from "./header.module.css";
 import logo from "../../images/logo.svg";
 
-function Header({ isOpen, totalCount }) {
+function Header({ isOpen, count }) {
   const location = useLocation();
 
   return (
@@ -54,11 +54,7 @@ function Header({ isOpen, totalCount }) {
             Контакты
           </Link>
           <NavLink className={style.cart__link} to="/cart">
-            {totalCount === 0 ? (
-              ""
-            ) : (
-              <div className={style.badge}>{totalCount}</div>
-            )}
+            {count === 0 ? "" : <div className={style.badge}>{count}</div>}
           </NavLink>
         </nav>
       </div>
@@ -67,6 +63,6 @@ function Header({ isOpen, totalCount }) {
 }
 Header.propTypes = {
   isOpen: PropTypes.func.isRequired,
-  totalCount: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
 };
 export default Header;
