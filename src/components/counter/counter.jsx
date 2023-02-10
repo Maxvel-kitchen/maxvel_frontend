@@ -35,6 +35,9 @@ function Counter({ id, amount, styles, handleDelete }) {
         type="number"
         value={amount}
         onChange={(e) => {
+          if (e.target.value > 999) {
+            e.target.value = 999;
+          }
           dispatch(type([id, Number(e.target.value)]));
         }}
         onBlur={() => {
@@ -44,7 +47,11 @@ function Counter({ id, amount, styles, handleDelete }) {
         }}
       />
       <button
-        onClick={() => dispatch(increase(id))}
+        onClick={() => {
+          if (amount < 999) {
+            dispatch(increase(id));
+          }
+        }}
         className={`${style.button} ${style.button_right}`}
         type="button"
       />
