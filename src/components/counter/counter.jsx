@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/prop-types */
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -26,11 +27,9 @@ function Counter({ id, amount, styles, handleDelete }) {
             dispatch(removeItem(id));
           }
         }}
-        className={style.button}
+        className={`${style.button} ${style.button_left}`}
         type="button"
-      >
-        -
-      </button>
+      />
       <input
         className={style.input}
         type="number"
@@ -46,11 +45,9 @@ function Counter({ id, amount, styles, handleDelete }) {
       />
       <button
         onClick={() => dispatch(increase(id))}
-        className={style.button}
+        className={`${style.button} ${style.button_right}`}
         type="button"
-      >
-        +
-      </button>
+      />
     </div>
   );
 }

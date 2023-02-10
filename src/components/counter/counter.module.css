@@ -6,16 +6,21 @@
 
 .button {
   padding: 0;
-  text-align: center;
   width: 22px;
   height: 22px;
-  border: 1px solid var(--main-text-color);
-  border-radius: 50%;
+  border: 1px solid transparent;
   cursor: pointer;
   background-color: transparent;
-  font-size: var(--desktop-maintext-font);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
+.button_left {
+  background-image: url(../../images/minus.svg);
+}
+.button_right {
+  background-image: url(../../images/plus.svg);
+}
 .input {
   margin: 0;
   padding: 0;
