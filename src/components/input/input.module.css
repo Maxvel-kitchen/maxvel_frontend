@@ -8,6 +8,7 @@
   line-height: 17px;
   outline: none;
   font-family: "Inter";
+  background-color: transparent;
 }
 .input::placeholder {
   color: #a9a9a9;

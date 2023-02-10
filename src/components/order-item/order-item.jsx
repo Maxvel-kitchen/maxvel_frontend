@@ -23,7 +23,7 @@ function OrderItem({ id, title, price, amount }) {
 
   useEffect(() => {
     if (deleted) {
-      const timerId = setTimeout(() => dispatch(remove(id)), 5000);
+      const timerId = setTimeout(() => dispatch(remove(id)), 4000);
       return () => {
         clearTimeout(timerId);
       };

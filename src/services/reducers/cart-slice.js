@@ -23,10 +23,6 @@ const cartSlice = createSlice({
         state.items.push({ ...action.payload, amount: 1 });
       }
     },
-    countItem: (state) => {
-      const newItem = state.items.find((item) => item.id);
-      return newItem.amount;
-    },
     getCartTotal: (state) => {
       const { totalAmount, totalCount, count } = state.items.reduce(
         (cartTotal, cartItem) => {
@@ -42,6 +38,17 @@ const cartSlice = createSlice({
       state.totalAmount = totalAmount;
       state.totalCount = totalCount;
       state.count = count;
+    },
+    type: (state, action) => {
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload[0]) {
+          return {
+            ...item,
+            amount: action.payload[1] === 0 ? "" : action.payload[1],
+          };
+        }
+        return item;
+      });
     },
     increase: (state, action) => {
       state.items = state.items.map((item) => {
@@ -66,15 +73,22 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
     returnItem: (state) => {
-      const deletedItem = state.items.find((item) => item.amount === 0);
-      deletedItem.amount += 1;
+      state.items = state.items.map((item) => {
+        if (item.amount === 0) {
+          item.amount += 1;
+        }
+        if (item.amount === (null || undefined || "")) {
+          item.amount = 1;
+        }
+        return item;
+      });
     },
   },
 });
 export const {
   addToCart,
-  countItem,
   getCartTotal,
+  type,
   increase,
   decrease,
   remove,
