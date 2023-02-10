@@ -11,7 +11,7 @@ import { addToCart } from "../../services/reducers/cart-slice";
 
 function Card({ item, id, title, price, newer, amount }) {
   const dispatch = useDispatch();
-  const { items, totalAmount } = useSelector((state) => state.cart);
+  const { items } = useSelector((state) => state.cart);
   const thisItem = items.find((item) => item.id === id);
 
   return (
@@ -21,7 +21,7 @@ function Card({ item, id, title, price, newer, amount }) {
       <p className={style.title}>{title}</p>
       <div className={style.container}>
         <p className={style.price}>{`${price} €`}</p>
-        {thisItem ? (
+        {thisItem && thisItem.amount > -1 ? (
           <Counter
             amount={thisItem ? thisItem.amount : amount}
             id={id}

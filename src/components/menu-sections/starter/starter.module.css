@@ -3,7 +3,7 @@
 }
 .buttons {
   position: sticky;
-  top: 65px;
+  top: 40px;
   padding: 5px 0;
   box-sizing: border-box;
   background-color: var(--main-bg-color);
