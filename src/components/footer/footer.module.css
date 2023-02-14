@@ -30,6 +30,7 @@
 
 .link {
   display: block;
+  color: var(--button-text-color);
   width: 22px;
   height: 22px;
   background-size: contain;
@@ -38,17 +39,17 @@
 }
 
 .link_instagram {
-  background-image: url(../../images/instagram.svg);
+  background-image: url(../../images/instagram-white.svg);
   transition: background-image 0.3s ease-in-out;
 }
 
 .link_telegram {
-  background-image: url(../../images/telegram.svg);
+  background-image: url(../../images/telegram-white.svg);
   transition: background-image 0.3s ease-in-out;
 }
 
 .link_whatsapp {
-  background-image: url(../../images/whatsApp.svg);
+  background-image: url(../../images/whatsApp-white.svg);
   transition: background-image 0.3s ease-in-out;
 }
 
@@ -67,8 +68,8 @@
   margin: 0;
   font-size: 16px;
   line-height: 19px;
-  color: var(--span-text-color);
   text-decoration: none;
+  color: var(--button-text-color);
 }
 
 .map {
@@ -85,6 +86,7 @@
 }
 
 .fieldset {
+  min-width: 298px;
   margin: 20px 0 0 0;
   padding: 0;
   border: 0;
@@ -93,11 +95,22 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.input {
+  border-color: var(--button-text-color);
+}
+.input::placeholder {
+  color: #d9d9d9;
+}
 .input_error {
   border-color: var(--error-color);
 }
 .input_ok {
   border-color: var(--ok-color);
+}
+.button {
+  background-color: var(--button-text-color);
+  color: var(--footer-bg-color);
 }
 @media screen and (max-width: 900px) {
   .container {

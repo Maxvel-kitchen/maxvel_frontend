@@ -15,7 +15,7 @@
   height: 100vh;
   padding: 34px 8px 32px;
   box-sizing: border-box;
-  background-color: var(--footer-bg-color);
+  background-color: var(--main-bg-color);
   position: fixed;
   left: 0;
   top: 0;

@@ -9,7 +9,7 @@ import Counter from "../counter/counter";
 import Button from "../button/button";
 import { addToCart } from "../../services/reducers/cart-slice";
 
-function Card({ item, id, title, price, newer, amount }) {
+function Card({ item, id, title, price, image, newer, amount }) {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
   const thisItem = items.find((item) => item.id === id);
@@ -17,7 +17,7 @@ function Card({ item, id, title, price, newer, amount }) {
   return (
     <li className={style.card}>
       {newer && <p className={style.tag}>New</p>}
-      <div className={style.image}></div>
+      <img className={style.image} src={image} alt={title} />
       <p className={style.title}>{title}</p>
       <div className={style.container}>
         <p className={style.price}>{`${price} €`}</p>

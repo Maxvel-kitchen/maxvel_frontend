@@ -3,6 +3,7 @@
   top: 0;
   width: 100%;
   background-color: var(--main-bg-color);
+  border-bottom: 1px solid var(--footer-bg-color);
   z-index: 2;
 }
 .container {
@@ -44,6 +45,7 @@
 }
 .badge {
   background-color: var(--secondary-bg-color);
+  color: var(--button-text-color);
   border-radius: 20px;
   width: 16px;
   height: 16px;

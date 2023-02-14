@@ -72,6 +72,7 @@ function Footer() {
           </p>
           <fieldset className={style.fieldset}>
             <InputValidate
+              styles={style.input}
               dirtyFields={dirtyFields.tel}
               placeholder="Ваш номер телефона"
               type="tel"
@@ -92,7 +93,12 @@ function Footer() {
               name="comment"
               register={register("comment")}
             />
-            <Button text="Отправить" submit disabled={!isValid} />
+            <Button
+              text="Отправить"
+              submit
+              disabled={!isValid}
+              styles={style.button}
+            />
           </fieldset>
         </form>
       </div>

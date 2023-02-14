@@ -26,7 +26,7 @@ function OrderList() {
           />
         ))}
       </ul>
-      <Title title={`Итого: ${totalAmount} €`} styles={style.title} />
+      <Title title={`Итого: ${totalAmount} €`} styles={style.total} />
     </>
   );
 }

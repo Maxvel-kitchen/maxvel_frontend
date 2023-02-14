@@ -7,7 +7,7 @@
   row-gap: 18px;
 }
 .link {
-  background-color: var(--footer-bg-color);
+  background-color: var(--secondary-bg-color);
   font-size: var(--mobile-maintext-font);
   padding: 6px 18px;
   border-radius: 20px;
@@ -15,6 +15,7 @@
 }
 .active {
   background-color: var(--secondary-bg-color);
+  color: var(--button-text-color);
 }
 @media screen and (min-width: 768px) {
   .items {

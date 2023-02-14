@@ -7,3 +7,10 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.title {
+  margin: 25px 0 38px;
+}
+.total {
+  margin: 95px 0 48px;
+}

@@ -14,9 +14,16 @@
   border: 1px solid var(--span-text-color);
   padding: 15px;
   box-sizing: border-box;
-
+  background-color: transparent;
+  background-image: url(../../images/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: right 30px top 10px;
   line-height: 17px;
+  font-family: Inter;
   outline: none;
+}
+.date::placeholder {
+  color: var(--sub-text-color);
 }
 
 .confirmation {
