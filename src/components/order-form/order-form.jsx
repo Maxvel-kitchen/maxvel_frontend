@@ -5,7 +5,7 @@
 import React from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
-
+import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import style from "./order-form.module.css";
@@ -42,17 +42,18 @@ function OrderForm() {
           name="name"
           register={register("name")}
         />
+
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           showTimeSelect
+          timeCaption="время"
           withPortal
           timeFormat="HH:mm"
           dateFormat="d MMMM yyyy HH:mm"
           minDate={new Date()}
           placeholderText="Дата мероприятия"
           className={style.date}
-          calendarClassName={style.calendar}
           locale="ru"
         />
         <InputValidate
