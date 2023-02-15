@@ -1,0 +1,41 @@
+.confirmation {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 15px;
+}
+.confirmation__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.confirmation__checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--sub-text-color);
+  border-radius: 2px;
+}
+.confirmation__checkbox:checked + label::before {
+  background-color: var(--secondary-bg-color);
+  border-color: var(--secondary-bg-color);
+  background-image: url(../../images/check-cart.svg);
+  background-position: center;
+  background-size: contain;
+}
+.confirmation__text {
+  margin: 0;
+  font-family: Montserrat;
+  color: var(--sub-text-color);
+  line-height: 15px;
+  font-size: var(--desktop-subtext-font);
+}
+.confirmation__link {
+  color: var(--sub-text-color);
+}
+@media screen and (min-width: 768px) {
+  .confirmation {
+    grid-column: 1 / 3;
+  }
+}

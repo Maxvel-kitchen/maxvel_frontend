@@ -16,6 +16,7 @@ import Map from "../map/map";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
 import Button from "../button/button";
+import Checkbox from "../checkbox/checkbox";
 import style from "./footer.module.css";
 
 function Footer() {
@@ -98,6 +99,13 @@ function Footer() {
               submit
               disabled={!isValid}
               styles={style.button}
+            />
+            <Checkbox
+              register={register("checkbox", {
+                required: true,
+              })}
+              styles={style.checkbox}
+              id="footer-check"
             />
           </fieldset>
         </form>

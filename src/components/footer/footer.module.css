@@ -98,6 +98,11 @@
 
 .input {
   border-color: var(--button-text-color);
+  color: var(--main-bg-color);
+}
+.fieldset input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--main-bg-color);
 }
 .input::placeholder {
   color: #d9d9d9;
@@ -112,6 +117,18 @@
   background-color: var(--button-text-color);
   color: var(--footer-bg-color);
 }
+.checkbox {
+  color: #d9d9d9;
+}
+.checkbox + label::before {
+  border: 2px solid #d9d9d9;
+}
+.checkbox:checked + label::before {
+  background-color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+  background-image: url(../../images/check-footer.svg);
+}
+
 @media screen and (max-width: 900px) {
   .container {
     padding: 36px 16px 44px;
