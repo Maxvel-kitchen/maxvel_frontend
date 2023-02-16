@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from "prop-types";
@@ -6,6 +7,7 @@ import Input from "../input/input";
 import style from "./input-validate.module.css";
 
 function InputValidate({
+  styles,
   dirtyFields,
   placeholder,
   type,
@@ -18,13 +20,13 @@ function InputValidate({
   return (
     <div>
       <Input
-        styles={
+        styles={`${styles} ${
           !dirtyFields
             ? style.input
             : errors
             ? style.input_error
             : style.input_ok
-        }
+        }`}
         placeholder={placeholder}
         type={type}
         name={name}

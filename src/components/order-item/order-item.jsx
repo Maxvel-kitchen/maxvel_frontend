@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable consistent-return */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/control-has-associated-label */
@@ -10,9 +11,8 @@ import Counter from "../counter/counter";
 import Button from "../button/button";
 import { remove, returnItem } from "../../services/reducers/cart-slice";
 import style from "./order-item.module.css";
-import img from "../../images/demo6.png";
 
-function OrderItem({ id, title, price, amount }) {
+function OrderItem({ id, image, title, price, amount }) {
   const dispatch = useDispatch();
 
   function countPrice(itemPrice, itemAmount) {
@@ -41,7 +41,7 @@ function OrderItem({ id, title, price, amount }) {
 
   return (
     <li className={cn(style.item, deleted ? style.item_deleted : "")}>
-      <img src={img} alt={title} className={style.image} />
+      <img src={image} alt={title} className={style.image} />
       <div className={style.description}>
         <p className={style.title}>{title}</p>
         <p className={cn(style.price, style.price_size_small)}>

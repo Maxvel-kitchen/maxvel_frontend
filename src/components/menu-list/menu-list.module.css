@@ -32,7 +32,7 @@
 }
 .link_active {
   background-color: var(--secondary-bg-color);
-  color: var(--main-text-color);
+  color: var(--button-text-color);
   text-decoration: none;
   padding: 5px 0 5px 20px;
   box-sizing: border-box;

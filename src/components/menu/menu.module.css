@@ -21,6 +21,6 @@
 @media screen and (min-width: 768px) {
   .menu__box {
     gap: 30px;
-    padding: 46px 80px 58px;
+    padding: 46px 80px 120px;
   }
 }

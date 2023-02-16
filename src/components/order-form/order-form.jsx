@@ -5,7 +5,7 @@
 import React from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
-
+import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import style from "./order-form.module.css";
@@ -13,6 +13,7 @@ import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
+import Checkbox from "../checkbox/checkbox";
 
 function OrderForm() {
   const {
@@ -42,17 +43,18 @@ function OrderForm() {
           name="name"
           register={register("name")}
         />
+
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           showTimeSelect
+          timeCaption="время"
           withPortal
           timeFormat="HH:mm"
           dateFormat="d MMMM yyyy HH:mm"
           minDate={new Date()}
           placeholderText="Дата мероприятия"
           className={style.date}
-          calendarClassName={style.calendar}
           locale="ru"
         />
         <InputValidate
@@ -103,24 +105,12 @@ function OrderForm() {
           />
         </div>
         <Button text="Отправить" submit disabled={!isValid} />
-        <div className={style.confirmation}>
-          <div className={style.confirmation__box}>
-            <input
-              className={style.confirmation__checkbox}
-              type="checkbox"
-              id="check"
-              {...register("checkbox", {
-                required: true,
-              })}
-              formNoValidate
-            />
-            <label htmlFor="check" />
-          </div>
-          <p className={style.confirmation__text}>
-            Нажимая на кнопку, вы соглашаетесь с обработкой своих персональных
-            данных
-          </p>
-        </div>
+        <Checkbox
+          register={register("checkbox", {
+            required: true,
+          })}
+          id="cart-check"
+        />
       </form>
     </div>
   );
