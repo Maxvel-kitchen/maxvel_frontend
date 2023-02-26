@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Title from "../title/title";
-import OrderItem from "../order-item/order-item";
+import CartItem from "../cart-item/cart-item";
 import { getCartTotal } from "../../services/reducers/cart-slice";
-import style from "./order-list.module.css";
+import style from "./cart-list.module.css";
 
-function OrderList() {
+function CartList() {
   const { items, totalAmount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,7 +16,7 @@ function OrderList() {
       <Title title="Заказ" styles={style.title} />
       <ul className={style.list}>
         {items.map((item) => (
-          <OrderItem
+          <CartItem
             key={item.id}
             id={item.id}
             image={item.image}
@@ -31,4 +31,4 @@ function OrderList() {
   );
 }
 
-export default OrderList;
+export default CartList;

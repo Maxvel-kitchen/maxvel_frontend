@@ -2,8 +2,8 @@
 /* eslint-disable no-unused-vars */
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import OrderForm from "../order-form/order-form";
-import OrderList from "../order-list/order-list";
+import CartForm from "../cart-form/cart-form";
+import CartList from "../cart-list/cart-list";
 import style from "./cart.module.css";
 import { getCartTotal } from "../../services/reducers/cart-slice";
 
@@ -20,8 +20,8 @@ function Cart() {
           <p className={style.empty}>Ваша корзина пуста</p>
         ) : (
           <>
-            <OrderList />
-            <OrderForm />
+            <CartList />
+            <CartForm />
           </>
         )}
       </div>

@@ -8,14 +8,14 @@ import ru from "date-fns/locale/ru";
 import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import style from "./order-form.module.css";
+import style from "./cart-form.module.css";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
 
-function OrderForm() {
+function CartForm() {
   const {
     register,
     handleSubmit,
@@ -116,4 +116,4 @@ function OrderForm() {
   );
 }
 
-export default OrderForm;
+export default CartForm;
