@@ -1,3 +1,23 @@
-.map {  
+.map {
   overflow: hidden;
+}
+.content {
+  min-width: 300px;
+  height: 205px;
+}
+
+@media screen and (max-width: 768px) {
+  .map {
+    min-width: 100%;
+  }
+  .content {
+    min-width: 340px;
+    height: 234px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .content {
+    min-width: 100%;
+  }
 }

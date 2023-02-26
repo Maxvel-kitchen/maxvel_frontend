@@ -73,6 +73,7 @@
 }
 
 .map {
+  margin: 0 auto;
   padding: 0 38px;
   display: flex;
   flex-direction: column;
@@ -129,7 +130,7 @@
   background-image: url(../../images/check-footer.svg);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .container {
     padding: 36px 16px 44px;
     grid-template-columns: 1fr;
@@ -159,19 +160,5 @@
     margin: 24px 0 0 0;
     max-width: 100%;
     gap: 12px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .form {
-    width: 100%;
-  }
-
-  .contacts {
-    justify-self: start;
-  }
-
-  .map {
-    justify-self: start;
   }
 }
