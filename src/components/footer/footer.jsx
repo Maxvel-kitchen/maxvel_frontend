@@ -94,18 +94,18 @@ function Footer() {
               name="comment"
               register={register("comment")}
             />
-            <Button
-              text="Отправить"
-              submit
-              disabled={!isValid}
-              styles={style.button}
-            />
             <Checkbox
               register={register("checkbox", {
                 required: true,
               })}
               styles={style.checkbox}
               id="footer-check"
+            />
+            <Button
+              text="Отправить"
+              submit
+              disabled={!isValid}
+              styles={style.button}
             />
           </fieldset>
         </form>

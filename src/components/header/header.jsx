@@ -9,15 +9,13 @@ import {
   scroller,
 } from "react-scroll";
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import style from "./header.module.css";
 import logo from "../../images/logo.svg";
 
 function Header({ isOpen, count }) {
-  const location = useLocation();
-
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -28,20 +26,22 @@ function Header({ isOpen, count }) {
             type="button"
             aria-label="Кнопка меню"
           />
-          <NavLink className={style.navigation__link} to="/">
-            <img
-              className={style.logo__image}
-              alt="Логотип Максвел"
-              src={logo}
-            />
-          </NavLink>
+          <Element className={style.menu__box} name="/">
+            <NavLink className={style.navigation__link} to="/">
+              <img
+                className={style.logo__image}
+                alt="Логотип Максвел"
+                src={logo}
+              />
+            </NavLink>
+          </Element>
         </nav>
         <nav className={style.navigation__links}>
           <NavLink
             className={cn(style.navigation__link, style.menu__link)}
             to="/menu"
           >
-            {location.pathname === ("/cart" || "/order") ? "Меню" : ""}
+            Меню
           </NavLink>
           <Link
             className={style.navigation__link}

@@ -104,13 +104,13 @@ function OrderForm() {
             register={register("comment")}
           />
         </div>
-        <Button text="Отправить" submit disabled={!isValid} />
         <Checkbox
           register={register("checkbox", {
             required: true,
           })}
           id="cart-check"
         />
+        <Button text="Отправить" submit disabled={!isValid} />
       </form>
     </div>
   );
