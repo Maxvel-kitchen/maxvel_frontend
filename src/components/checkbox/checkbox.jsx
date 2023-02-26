@@ -18,7 +18,12 @@ function Checkbox({ register, styles, id }) {
       </div>
       <p className={`${style.confirmation__text} ${styles}`}>
         Нажимая на кнопку, вы соглашаетесь с{" "}
-        <a className={`${style.confirmation__link} ${styles}`} href="#id">
+        <a
+          className={`${style.confirmation__link} ${styles}`}
+          href="/consent"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           обработкой своих персональных данных
         </a>
       </p>

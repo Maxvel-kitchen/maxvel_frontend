@@ -1,0 +1,18 @@
+.container {
+  max-width: 100%;
+  min-height: 60vh;
+  padding: 28px var(--mobile-block-padding) 48px;
+  color: var(--main-text-color);
+  font-size: var(--mobile-maintext-font);
+  line-height: 116%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: var(--desktop-container-width);
+    padding: 56px var(--desktop-block-padding) 120px;
+    font-size: var(--desktop-maintext-font);
+  }
+}

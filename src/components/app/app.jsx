@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "../header/header";
 import Menu from "../menu/menu";
+import Consent from "../consent/consent";
 import Cart from "../cart/cart";
 import Order from "../order/order";
 import Footer from "../footer/footer";
@@ -34,6 +35,7 @@ function App() {
         <Route exact path="*" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/consent" element={<Consent />} />
         <Route
           path={!location === "/menu" || "/cart" || "/order"}
           element={<Navigate replace exact path="*" />}
