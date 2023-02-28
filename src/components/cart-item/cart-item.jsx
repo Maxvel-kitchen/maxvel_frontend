@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import Counter from "../counter/counter";
 import Button from "../button/button";
-import { remove, returnItem } from "../../services/reducers/cart-slice";
+import { remove, returnItem } from "../../services/redux/cart-slice";
 import style from "./cart-item.module.css";
 
 function CartItem({ id, image, title, price, amount }) {

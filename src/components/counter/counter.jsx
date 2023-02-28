@@ -9,7 +9,7 @@ import {
   type,
   returnItem,
   removeItem,
-} from "../../services/reducers/cart-slice";
+} from "../../services/redux/cart-slice";
 import style from "./counter.module.css";
 
 function Counter({ id, amount, styles, handleDelete }) {

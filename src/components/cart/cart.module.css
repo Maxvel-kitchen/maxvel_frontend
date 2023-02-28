@@ -1,5 +1,6 @@
 .cart {
   width: 100%;
+  min-height: 60vh;
 }
 .container {
   padding: 25px var(--mobile-block-padding) 50px;
@@ -10,6 +11,16 @@
 .empty {
   margin: 100px auto;
   text-align: center;
+}
+.text {
+  margin: 0;
+}
+.button {
+  width: 298px;
+  height: 54px;
+  padding: 15px auto;
+  box-sizing: border-box;
+  margin-top: 50px;
 }
 @media screen and (min-width: 768px) {
   .container {

@@ -2,10 +2,13 @@
 /* eslint-disable no-unused-vars */
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import CartForm from "../cart-form/cart-form";
 import CartList from "../cart-list/cart-list";
+import Title from "../title/title";
+import Button from "../button/button";
 import style from "./cart.module.css";
-import { getCartTotal } from "../../services/reducers/cart-slice";
+import { getCartTotal } from "../../services/redux/cart-slice";
 
 function Cart() {
   const { items } = useSelector((state) => state.cart);
@@ -17,7 +20,13 @@ function Cart() {
     <main className={style.cart}>
       <div className={style.container}>
         {items.length === 0 ? (
-          <p className={style.empty}>Ваша корзина пуста</p>
+          <div className={style.empty}>
+            <Title title="Ваша корзина пока пуста" />
+            <p className={style.text}>Перейдите в меню, чтобы выбрать блюдо</p>
+            <Link to="/menu">
+              <Button text="В меню" styles={style.button} />
+            </Link>
+          </div>
         ) : (
           <>
             <CartList />

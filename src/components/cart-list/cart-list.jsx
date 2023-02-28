@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Title from "../title/title";
 import CartItem from "../cart-item/cart-item";
-import { getCartTotal } from "../../services/reducers/cart-slice";
+import { getCartTotal } from "../../services/redux/cart-slice";
 import style from "./cart-list.module.css";
 
 function CartList() {
