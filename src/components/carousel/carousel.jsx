@@ -17,6 +17,7 @@ class Carousel extends Component {
   render() {
     const settings = {
       dots: true,
+      dotsClass: `slick-dots ${style.custom}`,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
