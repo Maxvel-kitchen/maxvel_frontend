@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import style from "./card.module.css";
 import Counter from "../counter/counter";
 import Button from "../button/button";
-import { addToCart } from "../../services/reducers/cart-slice";
+import { addToCart } from "../../services/redux/cart-slice";
 
 function Card({ item, id, title, price, image, newer, amount }) {
   const dispatch = useDispatch();

@@ -9,10 +9,10 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import Counter from "../counter/counter";
 import Button from "../button/button";
-import { remove, returnItem } from "../../services/reducers/cart-slice";
-import style from "./order-item.module.css";
+import { remove, returnItem } from "../../services/redux/cart-slice";
+import style from "./cart-item.module.css";
 
-function OrderItem({ id, image, title, price, amount }) {
+function CartItem({ id, image, title, price, amount }) {
   const dispatch = useDispatch();
 
   function countPrice(itemPrice, itemAmount) {
@@ -70,10 +70,10 @@ function OrderItem({ id, image, title, price, amount }) {
     </li>
   );
 }
-OrderItem.propTypes = {
+CartItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   amount: PropTypes.number.isRequired,
 };
-export default OrderItem;
+export default CartItem;

@@ -7,7 +7,7 @@ import Consent from "../consent/consent";
 import Cart from "../cart/cart";
 import Order from "../order/order";
 import Footer from "../footer/footer";
-import { getCartTotal } from "../../services/reducers/cart-slice";
+import { getCartTotal } from "../../services/redux/cart-slice";
 import Modal from "../modal/modal";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
 
