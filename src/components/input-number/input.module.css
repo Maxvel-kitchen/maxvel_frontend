@@ -1,0 +1,42 @@
+.input {
+  width: 100% !important;
+  border-radius: 30px !important;
+  height: 50px !important;
+  border: 1px solid var(--button-text-color) !important;
+  color: var(--main-bg-color);
+  padding-left: 75px !important;
+  /* box-sizing: border-box !important; */
+  line-height: 17px !important;
+  font-family: "Inter" !important;
+  background-color: transparent !important;
+}
+.input::placeholder {
+  color: #a9a9a9 !important;
+  opacity: 1 !important;
+}
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
+}
+.button {
+    border-bottom-left-radius: 30px !important;
+    border-top-left-radius: 30px !important;
+    width: 70px !important;
+    padding-left: 20px !important;
+    }
+    
+.dropdown {
+    width: 260px !important;
+    border-radius: 10px !important;
+}
+.button:hover {
+    border-bottom-left-radius: 30px !important;
+    border-top-left-radius: 30px !important;
+}
+.search {
+    background-color: red !important;
+}
+@media screen and (min-width: 768px) {
+  .input {
+    font-size: var(--mobile-maintext-font);
+  }
+}
