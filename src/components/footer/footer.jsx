@@ -18,6 +18,7 @@ import InputValidate from "../input-validate/input-validate";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
 import style from "./footer.module.css";
+import InputNumber from "../input-number/input-number";
 
 function Footer() {
   const {
@@ -72,7 +73,7 @@ function Footer() {
             Ничего не хочу решать, просто позвоните мне:
           </p>
           <fieldset className={style.fieldset}>
-            <InputValidate
+            <InputNumber
               styles={style.input}
               dirtyFields={dirtyFields.tel}
               placeholder="Ваш номер телефона"
@@ -82,9 +83,9 @@ function Footer() {
                 required: true,
                 minLength: 10,
               })}
-              errors={errors.tel}
-              emptyMessage="Введите номер телефона"
-              incorrectMessage="Номер введён неверно"
+              //   errors={errors.tel}
+              //   emptyMessage="Введите номер телефона"
+              //   incorrectMessage="Номер введён неверно"
             />
 
             <Input
