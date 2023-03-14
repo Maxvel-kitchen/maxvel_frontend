@@ -22,11 +22,13 @@ input:-webkit-autofill {
     border-top-left-radius: 30px !important;
     width: 70px !important;
     padding-left: 20px !important;
-    }
+    background-color: var(--button-text-color) !important;
+}
     
 .dropdown {
     width: 260px !important;
     border-radius: 10px !important;
+    background-color: var(--button-text-color) !important;
 }
 .button:hover {
     border-bottom-left-radius: 30px !important;

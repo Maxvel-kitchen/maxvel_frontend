@@ -15,7 +15,7 @@ function InputNumber() {
         inputClass={style.input}
         buttonClass={style.button}
         dropdownClass={style.dropdown}
-        country={"tr"}
+        country={"cy"}
         value={state}
         onChange={() => setState()}
       />
