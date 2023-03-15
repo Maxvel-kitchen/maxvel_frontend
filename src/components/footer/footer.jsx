@@ -83,9 +83,6 @@ function Footer() {
                 required: true,
                 minLength: 10,
               })}
-              //   errors={errors.tel}
-              //   emptyMessage="Введите номер телефона"
-              //   incorrectMessage="Номер введён неверно"
             />
 
             <Input

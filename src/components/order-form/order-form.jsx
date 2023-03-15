@@ -61,19 +61,7 @@ function OrderForm() {
           className={style.date}
           locale="ru"
         />
-        {/* <InputValidate
-          dirtyFields={dirtyFields.tel}
-          placeholder="Ваш номер телефона"
-          type="tel"
-          name="tel"
-          register={register("tel", {
-            required: true,
-            minLength: 10,
-          })}
-          errors={errors.tel}
-          emptyMessage="Введите номер телефона"
-          incorrectMessage="Номер введён неверно"
-        /> */}
+
         <PhoneInput
           inputClass={phoneStyle.phone_input}
           buttonClass={phoneStyle.phone_button}

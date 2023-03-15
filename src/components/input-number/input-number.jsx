@@ -19,13 +19,6 @@ function InputNumber() {
         value={state}
         onChange={() => setState()}
       />
-
-      {/* {(errors && errors.type === "required" && (
-        <p className={style.error}>{emptyMessage}</p>
-      )) ||
-        (errors && (errors.type === "minLength" || "pattern") && (
-          <p className={style.error}>{incorrectMessage}</p>
-        ))} */}
     </div>
   );
 }
