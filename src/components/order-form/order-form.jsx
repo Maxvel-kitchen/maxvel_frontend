@@ -2,13 +2,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React from "react";
+// import "react-phone-input-2/lib/style.css";
+import React, { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
 import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
 import style from "./order-form.module.css";
+import phoneStyle from "./input.module.css";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
@@ -27,6 +30,7 @@ function OrderForm() {
   };
   const [startDate, setStartDate] = React.useState(null);
   registerLocale("ru", ru);
+  const [state, setState] = useState();
 
   return (
     <div className={style.content}>
@@ -57,7 +61,7 @@ function OrderForm() {
           className={style.date}
           locale="ru"
         />
-        <InputValidate
+        {/* <InputValidate
           dirtyFields={dirtyFields.tel}
           placeholder="Ваш номер телефона"
           type="tel"
@@ -69,6 +73,14 @@ function OrderForm() {
           errors={errors.tel}
           emptyMessage="Введите номер телефона"
           incorrectMessage="Номер введён неверно"
+        /> */}
+        <PhoneInput
+          inputClass={phoneStyle.phone_input}
+          buttonClass={phoneStyle.phone_button}
+          dropdownClass={phoneStyle.phone_dropdown}
+          country="cy"
+          value={state}
+          onChange={() => setState()}
         />
         <InputValidate
           dirtyFields={dirtyFields.email}
