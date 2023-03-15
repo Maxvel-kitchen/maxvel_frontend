@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+// import "react-phone-input-2/lib/style.css";
 import React, { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
@@ -10,15 +11,15 @@ import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
-import style from "./cart-form.module.css";
+import style from "./order-form.module.css";
+import phoneStyle from "./input-phone.module.css";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
-import phoneStyle from "./input-phone.module.css";
 
-function CartForm() {
+function OrderForm() {
   const {
     register,
     handleSubmit,
@@ -61,6 +62,7 @@ function CartForm() {
           className={style.date}
           locale="ru"
         />
+
         <PhoneInput
           inputClass={phoneStyle.phone_input}
           buttonClass={phoneStyle.phone_button}
@@ -115,4 +117,4 @@ function CartForm() {
   );
 }
 
-export default CartForm;
+export default OrderForm;
