@@ -1,0 +1,44 @@
+.phone_input {
+    width: 100% !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    border: 1px solid var(--span-text-color) !important;
+    color: var(--span-text-color) !important;
+    padding-left: 75px !important;
+    line-height: 17px !important;
+    font-family: "Inter" !important;
+    background-color: transparent !important;
+  }
+  .phone_input::placeholder {
+    color: #a9a9a9 !important;
+    opacity: 1 !important;
+  }
+  input:-webkit-autofill {
+    -webkit-background-clip: text !important;
+  }
+  .phone_button {
+      border-bottom-left-radius: 30px !important;
+      border-top-left-radius: 30px !important;
+      width: 70px !important;
+      padding-left: 20px !important;
+      background-color: var(--button-text-color) !important;
+      border-color: var(--span-text-color) !important;
+  }
+      
+  .phone_dropdown {
+      width: 260px !important;
+      border-radius: 10px !important;
+      background-color: var(--button-text-color) !important;
+  }
+  .phone_button:hover {
+      border-bottom-left-radius: 30px !important;
+      border-top-left-radius: 30px !important;
+  }
+  .phone_search {
+      background-color: red !important;
+  }
+  @media screen and (min-width: 768px) {
+    .phone_input {
+      font-size: var(--mobile-maintext-font);
+    }
+  }
