@@ -27,10 +27,17 @@ import Service from "../menu-sections/service/service";
 import MenuList from "../menu-list/menu-list";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
+import { getCategories } from "../../services/api/categories";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
+  const [categories, setCategories] = useState(true);
+
+  useEffect(() => {
+    getCategories(setCategories);
+    console.log(categories);
+  }, []);
 
   function windowWidth() {
     setWidth(() => window.innerWidth);

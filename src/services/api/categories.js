@@ -2,7 +2,7 @@
 import axios from "axios";
 import { API_CATEGORIES } from "./api";
 
-export const categories = async (setCategories) => {
+export const getCategories = async (setCategories) => {
   try {
     const response = await axios.post(API_CATEGORIES);
     setCategories(response.data);
