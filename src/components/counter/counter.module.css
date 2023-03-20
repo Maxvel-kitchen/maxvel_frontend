@@ -15,12 +15,14 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .button_left {
   background-image: url(../../images/minus.svg);
 }
 .button_right {
   background-image: url(../../images/plus.svg);
 }
+
 .input {
   margin: 0;
   padding: 0;

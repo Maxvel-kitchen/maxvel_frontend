@@ -2,12 +2,14 @@
   position: sticky;
   top: 0;
   width: 100%;
+
   background-color: var(--main-bg-color);
   border-bottom: 1px solid var(--footer-bg-color);
   z-index: 2;
 }
 .container {
   max-width: 100%;
+  height: 48px;
   padding: 7px var(--mobile-block-padding);
   box-sizing: border-box;
   margin: 0 auto;
@@ -19,14 +21,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
 }
 
 .navigation__link {
   color: var(--span-text-color);
   text-decoration: none;
-  font-size: var(--mobile-maintext-font);
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 15px;
   cursor: pointer;
 }
 .menu__link {
@@ -44,12 +46,13 @@
   position: relative;
 }
 .badge {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--footer-bg-color);
   color: var(--button-text-color);
   border-radius: 20px;
-  width: 16px;
-  height: 16px;
-  font-size: 9px;
+  width: 13px;
+  height: 13px;
+  font-weight: 600;
+  font-size: 10px;
   line-height: 11px;
   position: absolute;
   right: -5px;
@@ -59,12 +62,12 @@
   align-items: center;
 }
 .logo__image {
-  width: 50px;
-  height: 26px;
+  width: 59px;
+  height: 30px;
 }
 .hamburger__menu {
   width: 28px;
-  height: 14px;
+  height: 24px;
   border: none;
   cursor: pointer;
   background-color: transparent;
@@ -75,6 +78,7 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: var(--desktop-container-width);
+    height: 85px;
     padding: 14px var(--desktop-block-padding);
   }
   .hamburger__menu {
@@ -91,12 +95,15 @@
   .badge {
     width: 20px;
     height: 20px;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 16px;
   }
   .logo__image {
     width: 110px;
     height: 57px;
+  }
+  .navigation__links {
+    gap: 40px;
   }
   .navigation__link {
     font-size: var(--desktop-maintext-font);

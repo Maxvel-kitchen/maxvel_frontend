@@ -1,10 +1,20 @@
 import PropTypes from "prop-types";
 import style from "./button.module.css";
 
-function Button({ text, styles, submit, disabled, onClick }) {
+function Button({
+  text,
+  styles,
+  transparent,
+  submit,
+  footer,
+  disabled,
+  onClick,
+}) {
   return (
     <button
-      className={`${style.button} ${submit ? style.submit : ""} ${styles}`}
+      className={`${style.button} ${transparent ? style.transparent : ""} ${
+        submit ? style.submit : ""
+      } ${footer ? style.footer : ""} ${styles}`}
       type={submit ? "submit" : "button"}
       disabled={disabled}
       onClick={onClick}
@@ -15,10 +25,19 @@ function Button({ text, styles, submit, disabled, onClick }) {
 }
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  styles: PropTypes.string.isRequired,
-  submit: PropTypes.bool.isRequired,
-  disabled: PropTypes.bool.isRequired,
+  styles: PropTypes.string,
+  transparent: PropTypes.bool,
+  submit: PropTypes.bool,
+  footer: PropTypes.bool,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
+};
+Button.defaultProps = {
+  styles: "",
+  transparent: false,
+  footer: false,
+  submit: false,
+  disabled: false,
 };
 
 export default Button;

@@ -7,16 +7,48 @@
   line-height: 19px;
   font-family: "Montserrat";
   cursor: pointer;
-  transition: opacity 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #bed5a2;
+}
+
+.button:active {
+  background-color: #67893d;
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--footer-bg-color);
+  border: 1px solid var(--footer-bg-color);
+}
+
+.transparent:hover {
+  color: var(--secondary-bg-color);
+  border: 1px solid var(--secondary-bg-color);
 }
 
 .submit {
   height: 50px;
 }
 .submit:hover {
-  opacity: 0.8;
+  background-color: #bed5a2;
 }
 .submit:disabled {
-  opacity: 0.5;
+  background-color: #c0c7b7;
+  cursor: default;
+}
+
+.footer {
+  background: #fff;
+  color: var(--secondary-bg-color);
+}
+.footer:hover {
+  background-color: #eff9e3;
+}
+.footer:disabled {
+  background-color: #f8fbf4;
+  color: #c0c7b7;
   cursor: default;
 }
