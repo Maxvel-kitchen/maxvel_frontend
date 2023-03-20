@@ -32,7 +32,7 @@ import { getCategories } from "../../services/api/categories";
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
-  const [categories, setCategories] = useState(true);
+  const [categories, setCategories] = useState();
 
   useEffect(() => {
     getCategories(setCategories);
@@ -60,6 +60,9 @@ function Menu() {
     <main className={style.menu}>
       <div className={style.container}>
         <Carousel />
+        {categories?.map((category) => (
+          <p>{category.name}</p>
+        ))}
         <Element className={style.menu__box} name="menu">
           <div className={style.sticky}>{menuList && <MenuList />}</div>
           <ScrollToTop
