@@ -3,19 +3,21 @@
   height: 100vh;
   position: fixed;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 .background {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  background-color: #1e1e1e;
+  opacity: 0.3;
 }
 .modal {
   width: 210px;
   height: 100vh;
-  padding: 34px 8px 32px;
+  padding: 56px 8px 32px;
   box-sizing: border-box;
-  background-color: var(--main-bg-color);
+  background-color: var(--footer-bg-color);
+  border-radius: 0px 7px 7px 0px;
   position: fixed;
   left: 0;
   top: 0;
@@ -32,13 +34,16 @@
 .button {
   background-color: transparent;
   background-image: url(../../images/arrow.svg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border: none;
-  width: 10px;
-  height: 14px;
+  width: 36px;
+  height: 36px;
   position: absolute;
-  right: 14px;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
 }
 
 @keyframes modal {

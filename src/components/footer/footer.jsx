@@ -28,41 +28,39 @@ function Footer() {
   return (
     <footer className={style.footer}>
       <div className={style.container}>
-        <Element name="contacts">
-          <div className={style.contacts}>
-            <a className={style.text} href="tel:+35799981120">
-              +35799981120
-            </a>
-            <ul className={style.items}>
-              <li className={style.link}>
-                <a
-                  target="_blank"
-                  className={`${style.link} ${style.link_instagram}`}
-                  href="https://www.instagram.com"
-                  rel="noopener noreferrer"
-                  aria-label="instagram"
-                ></a>
-              </li>
-              <li className={style.link}>
-                <a
-                  target="_blank"
-                  className={`${style.link} ${style.link_telegram}`}
-                  href="https://web.telegram.org/"
-                  rel="noopener noreferrer"
-                  aria-label="telegram"
-                ></a>
-              </li>
-              <li className={style.link}>
-                <a
-                  target="_blank"
-                  className={`${style.link} ${style.link_whatsapp}`}
-                  href="https://web.whatsapp.com/"
-                  rel="noopener noreferrer"
-                  aria-label="whatsapp"
-                ></a>
-              </li>
-            </ul>
-          </div>
+        <Element className={style.contacts} name="contacts">
+          <a className={style.text} href="tel:+35799981120">
+            +35799981120
+          </a>
+          <ul className={style.items}>
+            <li className={style.link}>
+              <a
+                target="_blank"
+                className={`${style.link} ${style.link_instagram}`}
+                href="https://www.instagram.com"
+                rel="noopener noreferrer"
+                aria-label="instagram"
+              ></a>
+            </li>
+            <li className={style.link}>
+              <a
+                target="_blank"
+                className={`${style.link} ${style.link_telegram}`}
+                href="https://web.telegram.org/"
+                rel="noopener noreferrer"
+                aria-label="telegram"
+              ></a>
+            </li>
+            <li className={style.link}>
+              <a
+                target="_blank"
+                className={`${style.link} ${style.link_whatsapp}`}
+                href="https://web.whatsapp.com/"
+                rel="noopener noreferrer"
+                aria-label="whatsapp"
+              ></a>
+            </li>
+          </ul>
         </Element>
         <div className={style.map}>
           <p className={style.text}>Tochni 7740, Кипр</p>
@@ -84,7 +82,6 @@ function Footer() {
                 minLength: 10,
               })}
             />
-
             <Input
               styles={style.input}
               placeholder="Комментарий"
