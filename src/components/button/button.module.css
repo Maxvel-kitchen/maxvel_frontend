@@ -44,11 +44,10 @@
   background: #fff;
   color: var(--secondary-bg-color);
 }
-
 .footer:hover {
   background-color: #eff9e3;
 }
-.submit:disabled {
+.footer:disabled {
   background-color: #f8fbf4;
   color: #c0c7b7;
   cursor: default;

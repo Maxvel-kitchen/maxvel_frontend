@@ -99,6 +99,7 @@ function Footer() {
             <Button
               text="Отправить"
               submit
+              footer
               disabled={!isValid}
               styles={style.button}
             />

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import PropTypes from "prop-types";
 import style from "./button.module.css";
 
@@ -14,8 +13,8 @@ function Button({
   return (
     <button
       className={`${style.button} ${transparent ? style.transparent : ""} ${
-        submit && footer ? style.footer : submit ? style.submit : ""
-      } ${styles}`}
+        submit ? style.submit : ""
+      } ${footer ? style.footer : ""} ${styles}`}
       type={submit ? "submit" : "button"}
       disabled={disabled}
       onClick={onClick}
