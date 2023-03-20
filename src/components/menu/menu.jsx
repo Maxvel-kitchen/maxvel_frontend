@@ -27,10 +27,17 @@ import Service from "../menu-sections/service/service";
 import MenuList from "../menu-list/menu-list";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
+import { getCategories } from "../../services/api/categories";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
+  const [categories, setCategories] = useState();
+
+  useEffect(() => {
+    getCategories(setCategories);
+    console.log(categories);
+  }, []);
 
   function windowWidth() {
     setWidth(() => window.innerWidth);
@@ -53,6 +60,9 @@ function Menu() {
     <main className={style.menu}>
       <div className={style.container}>
         <Carousel />
+        {categories?.map((category) => (
+          <p>{category.name}</p>
+        ))}
         <Element className={style.menu__box} name="menu">
           <div className={style.sticky}>{menuList && <MenuList />}</div>
           <ScrollToTop
