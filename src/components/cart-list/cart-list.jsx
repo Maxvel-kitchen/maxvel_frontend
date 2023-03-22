@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Title from "../title/title";
 import CartItem from "../cart-item/cart-item";
-import { getCartTotal } from "../../services/redux/cart-slice";
+import Button from "../button/button";
+import { getCartTotal, removeAll } from "../../services/redux/cart-slice";
 import style from "./cart-list.module.css";
 
 function CartList() {
@@ -11,6 +12,11 @@ function CartList() {
   useEffect(() => {
     dispatch(getCartTotal());
   }, [items]);
+
+  function removeAllItems() {
+    dispatch(removeAll());
+  }
+
   return (
     <>
       <Title title="Заказ" styles={style.title} />
@@ -26,6 +32,14 @@ function CartList() {
           />
         ))}
       </ul>
+      <div className={style.container}>
+        <Button
+          text="Очистить корзину"
+          styles={style.button}
+          transparent
+          onClick={() => removeAllItems()}
+        />
+      </div>
       <Title title={`Итого: ${totalAmount} €`} styles={style.total} />
     </>
   );

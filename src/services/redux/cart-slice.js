@@ -72,6 +72,9 @@ const cartSlice = createSlice({
     remove: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
+    removeAll: (state) => {
+      state.items = [];
+    },
     returnItem: (state) => {
       state.items = state.items.map((item) => {
         if (item.amount === 0) {
@@ -92,6 +95,7 @@ export const {
   increase,
   decrease,
   remove,
+  removeAll,
   removeItem,
   returnItem,
 } = cartSlice.actions;

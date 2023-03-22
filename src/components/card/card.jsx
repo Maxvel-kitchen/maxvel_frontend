@@ -32,6 +32,7 @@ function Card({ item, id, title, price, image, newer, amount }) {
             text="Добавить"
             onClick={() => dispatch(addToCart(item))}
             styles={style.button}
+            small
             type="button"
           />
         )}

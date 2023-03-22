@@ -4,6 +4,7 @@
   background-color: var(--secondary-bg-color);
   color: var(--button-text-color);
   font-size: var(--desktop-maintext-font);
+  font-size: 16px;
   line-height: 19px;
   font-family: "Montserrat";
   cursor: pointer;
@@ -18,13 +19,22 @@
   background-color: #67893d;
 }
 
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
 .transparent {
   background-color: transparent;
   color: var(--footer-bg-color);
   border: 1px solid var(--footer-bg-color);
+  transition: color 0.3s, border 0.3s ease-in-out;
 }
 
 .transparent:hover {
+  background-color: transparent;
   color: var(--secondary-bg-color);
   border: 1px solid var(--secondary-bg-color);
 }
@@ -38,6 +48,18 @@
 .submit:disabled {
   background-color: #c0c7b7;
   cursor: default;
+}
+
+.small {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .small {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 
 .footer {
