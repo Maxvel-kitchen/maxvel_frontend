@@ -3,8 +3,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-// import "react-phone-input-2/lib/style.css";
-import React, { useState } from "react";
+//
+import React, { useEffect, useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
 import "./date-picker.css";
@@ -32,6 +32,9 @@ function OrderForm() {
   const [startDate, setStartDate] = React.useState(null);
   registerLocale("ru", ru);
   const [state, setState] = useState();
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   return (
     <div className={style.content}>
@@ -62,15 +65,24 @@ function OrderForm() {
           className={style.date}
           locale="ru"
         />
+        <div>
+          <PhoneInput
+            inputClass={phoneStyle.phone_input}
+            buttonClass={phoneStyle.phone_button}
+            dropdownClass={phoneStyle.phone_dropdown}
+            country="cy"
+            value={state}
+            onChange={(value) => setState(value)}
+            isValid={(value) => {
+              if (!value) {
+                return `Invalid value`;
+              }
+              return true;
+            }}
+          />
 
-        <PhoneInput
-          inputClass={phoneStyle.phone_input}
-          buttonClass={phoneStyle.phone_button}
-          dropdownClass={phoneStyle.phone_dropdown}
-          country="cy"
-          value={state}
-          onChange={() => setState()}
-        />
+          {state}
+        </div>
         <InputValidate
           dirtyFields={dirtyFields.email}
           placeholder="Ваша почта"
