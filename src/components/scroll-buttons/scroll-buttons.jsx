@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import {
   Link,
@@ -8,54 +9,35 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import PropTypes from "prop-types";
 import style from "./scroll-buttons.module.css";
 
-function ScrollButtons() {
+function ScrollButtons({ subCategories }) {
   return (
     <div className={style.container}>
       <ul className={style.items}>
-        <li className={style.item}>
-          <Link
-            className={style.link}
-            activeClass={style.active}
-            to="link1"
-            spy
-            smooth
-            duration={700}
-            offset={-100}
-          >
-            Мясо и птица
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={style.link}
-            activeClass={style.active}
-            to="link2"
-            spy
-            smooth
-            duration={700}
-            offset={-100}
-          >
-            Рыба
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={style.link}
-            activeClass={style.active}
-            to="link3"
-            spy
-            smooth
-            duration={700}
-            offset={-100}
-          >
-            Без мяса
-          </Link>
-        </li>
+        {subCategories?.map((subCategory) => (
+          <li className={style.item} key={subCategory.id}>
+            <Link
+              className={style.link}
+              activeClass={style.active}
+              to="link1"
+              spy
+              smooth
+              duration={700}
+              offset={-100}
+            >
+              {subCategory.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
+
+// ScrollButtons.propTypes = {
+//   subCategories: PropTypes.arrayOf.isRequired,
+// };
 
 export default ScrollButtons;
