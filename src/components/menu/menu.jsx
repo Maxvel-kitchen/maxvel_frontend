@@ -20,13 +20,19 @@ import MenuItem from "../menu-sections/menu-item";
 import MenuList from "../menu-list/menu-list";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
+import getPositions from "../../services/api/position-list";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
   const [categories, setCategories] = useState();
+  const [positions, setPositions] = useState();
+
   useEffect(() => {
     getCategories(setCategories);
+  }, []);
+  useEffect(() => {
+    getPositions(setPositions);
   }, []);
 
   function windowWidth() {
@@ -60,11 +66,15 @@ function Menu() {
           />
           <Routes>
             <Route exact path="/" element={<MenuItem title="Новинки" />} />
-            <Route
-              exact
-              path="/menu"
-              element={<Navigate replace to={`/menu/${categories[0].slug}`} />}
-            />
+            {categories && (
+              <Route
+                exact
+                path="/menu"
+                element={
+                  <Navigate replace to={`/menu/${categories[0].slug}`} />
+                }
+              />
+            )}
             {categories?.map((category) => (
               <Route
                 key={category.id}
