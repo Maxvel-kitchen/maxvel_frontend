@@ -1,41 +1,42 @@
 .phone_input {
-    width: 100% !important;
-    border-radius: 30px !important;
-    height: 50px !important;
-    border: 1px solid var(--span-text-color) !important;
-    color: var(--span-text-color) !important;
-    padding-left: 75px !important;
-    line-height: 17px !important;
-    font-family: "Inter" !important;
-    background-color: transparent !important;
+    width: 100%;
+    border-radius: 30px;
+    height: 50px;
+    border: 1px solid var(--span-text-color);
+    color: var(--span-text-color);
+    padding-left: 75px;
+    line-height: 17px;
+    font-family: "Inter";
+    background-color: transparent;
   }
   .phone_input::placeholder {
-    color: #a9a9a9 !important;
-    opacity: 1 !important;
+    color: #a9a9a9;
+    opacity: 1;
   }
   input:-webkit-autofill {
-    -webkit-background-clip: text !important;
+    -webkit-background-clip: text;
   }
   .phone_button {
-      border-bottom-left-radius: 30px !important;
-      border-top-left-radius: 30px !important;
-      width: 70px !important;
-      padding-left: 20px !important;
-      background-color: var(--button-text-color) !important;
-      border-color: var(--span-text-color) !important;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
+      width: 70px;
+      padding-left: 20px;
+      background-color: var(--button-text-color);
+      border-color: var(--span-text-color);
   }
       
   .phone_dropdown {
-      width: 260px !important;
-      border-radius: 10px !important;
-      background-color: var(--button-text-color) !important;
+      width: 260px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: var(--button-text-color);
   }
   .phone_button:hover {
-      border-bottom-left-radius: 30px !important;
-      border-top-left-radius: 30px !important;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
   }
   .phone_search {
-      background-color: red !important;
+      /* background-color: red; */
   }
   @media screen and (min-width: 768px) {
     .phone_input {

@@ -6,6 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
 import { store, persistor } from "./services/redux/index";
 import App from "./components/app/app";
+import "react-phone-input-2/lib/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
