@@ -17,7 +17,7 @@ function MenuList({ categories }) {
                 className={({ isActive }) =>
                   isActive ? style.link_active : style.link
                 }
-                to={`/menu/${category.id}`}
+                to={`/menu/${category.slug}`}
                 // onClick={onClose}
               >
                 {category.name}

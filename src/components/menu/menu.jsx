@@ -15,7 +15,7 @@ import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import Carousel from "../carousel/carousel";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
-import { getCategories } from "../../services/api/categories";
+import getCategories from "../../services/api/categories";
 import MenuItem from "../menu-sections/menu-item";
 import MenuList from "../menu-list/menu-list";
 import Title from "../title/title";
@@ -27,7 +27,6 @@ function Menu() {
   const [categories, setCategories] = useState();
   useEffect(() => {
     getCategories(setCategories);
-    console.log(categories);
   }, []);
 
   function windowWidth() {
@@ -64,12 +63,12 @@ function Menu() {
             <Route
               exact
               path="/menu"
-              element={<Navigate replace to="/menu/1" />}
+              element={<Navigate replace to={`/menu/${categories[0].slug}`} />}
             />
             {categories?.map((category) => (
               <Route
                 key={category.id}
-                path={`/menu/${category.id}`}
+                path={`/menu/${category.slug}`}
                 element={<MenuItem title={category.name} />}
               />
             ))}
