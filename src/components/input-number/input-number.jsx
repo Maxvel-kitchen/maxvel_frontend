@@ -9,27 +9,34 @@ import PhoneInput from "react-phone-input-2";
 import { useState, useEffect } from "react";
 import style from "./input-number.module.css";
 
-function InputNumber() {
+function InputNumber({ styles }) {
   const [state, setState] = useState();
-  const [isValidPhone, setIsValidPhone] = useState(false);
+  const [touched, setTouched] = useState();
+  const [isValidPhone, setIsValidPhone] = useState();
   useEffect(() => {
-    if (state) {
-      if (state.length < 11) {
+    if (state && touched) {
+      if (touched && (state.length < 11 || !state)) {
         setIsValidPhone(false);
       } else setIsValidPhone(true);
-    } else setIsValidPhone(false);
-    console.log(isValidPhone);
-  }, [state]);
+    }
+  }, [state, touched]);
 
   return (
     <div>
       <PhoneInput
-        inputClass={style.input}
-        buttonClass={style.button}
-        dropdownClass={style.dropdown}
+        inputClass={`${style.input} ${styles} ${
+          !touched
+            ? style.input
+            : isValidPhone
+            ? style.input_valid
+            : style.input_invalid
+        } `}
+        buttonClass={`${style.button} ${styles}`}
+        dropdownClass={`${style.dropdown} ${styles}`}
         country={"cy"}
         value={state}
         onChange={(value) => setState(value)}
+        onBlur={() => setTouched(true)}
         isValid={(value) => {
           if (!value) {
             return false;
@@ -37,11 +44,11 @@ function InputNumber() {
           return true;
         }}
       />
-      {(!state && (
+      {(touched && !state && (
         <p className={style.invalid_number_message}>Введите номер телефона</p>
       )) ||
         (state && state.length < 11 && (
-          <p className={style.invalid_number_message}>Номер введен невнрно</p>
+          <p className={style.invalid_number_message}>Номер введен неверно</p>
         ))}
     </div>
   );

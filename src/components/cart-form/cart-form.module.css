@@ -1,3 +1,15 @@
+.input {
+  border: 1px solid #78787a;
+}
+
+.input:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.input:hover {
+  border: 1px solid #a9a9a9;
+}
+
 .title {
   margin: 40px 0;
 }
@@ -11,7 +23,7 @@
   width: 100%;
   border-radius: 30px;
   height: 50px;
-  border: 1px solid var(--span-text-color);
+  border: 1px solid #78787a;
   padding: 15px;
   box-sizing: border-box;
   background-color: transparent;
@@ -24,6 +36,15 @@
 }
 .date::placeholder {
   color: var(--sub-text-color);
+}
+
+.input_number {
+  border: 1px solid #78787a !important;
+  color: var(--main-text-color);
+}
+
+.input_number:focus {
+  border: 1px solid #1e1e1e !important;
 }
 
 @media screen and (min-width: 768px) {

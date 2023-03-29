@@ -9,7 +9,7 @@ import ru from "date-fns/locale/ru";
 import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import PhoneInput from "react-phone-input-2";
+import InputNumber from "../input-number/input-number";
 import style from "./cart-form.module.css";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
@@ -61,7 +61,8 @@ function CartForm() {
           className={style.date}
           locale="ru"
         />
-        <PhoneInput
+        <InputNumber
+          styles={style.input_number}
           inputClass={phoneStyle.phone_input}
           buttonClass={phoneStyle.phone_button}
           dropdownClass={phoneStyle.phone_dropdown}
