@@ -99,6 +99,7 @@ function CartForm() {
           <Input
             styles={style.input}
             placeholder="Комментарий"
+            textarea
             type="text"
             name="comment"
             register={register("comment")}

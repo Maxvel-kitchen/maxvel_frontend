@@ -9,6 +9,10 @@
   outline: none;
   font-family: "Inter";
   background-color: transparent;
+  resize: none;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 .input::placeholder {
   color: #a9a9a9;

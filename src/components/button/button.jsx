@@ -32,7 +32,7 @@ Button.propTypes = {
   small: PropTypes.bool,
   footer: PropTypes.bool,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 Button.defaultProps = {
   styles: "",
@@ -41,6 +41,7 @@ Button.defaultProps = {
   small: false,
   submit: false,
   disabled: false,
+  onClick: () => {},
 };
 
 export default Button;
