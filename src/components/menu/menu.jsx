@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
@@ -10,8 +11,10 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+
 import { useState, useEffect, useCallback } from "react";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Carousel from "../carousel/carousel";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
@@ -20,19 +23,35 @@ import MenuItem from "../menu-sections/menu-item";
 import MenuList from "../menu-list/menu-list";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
-import getPositions from "../../services/api/position-list";
+import {
+  //   getNewPositions,
+  getPositions,
+} from "../../services/api/position-list";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
   const [categories, setCategories] = useState();
   const [positions, setPositions] = useState();
+  //   const dispatch = useDispatch();
+  //   const { menu } = useSelector((state) => state.menu.mainMenuList);
+  //   useEffect(() => {
+  //     getPositions(setPositions, categorySlug);
+  //     console.log(positions);
+  //     dispatch({
+  //       type: "SET_POSITIONS",
+  //       payload: positions,
+  //     });
+  //     console.log(menu);
+  //   }, [categorySlug]);
+
+  function handleCategoryClick(category) {
+    console.log("category: ", category);
+    // console.log("menu: ", menu);
+  }
 
   useEffect(() => {
     getCategories(setCategories);
-  }, []);
-  useEffect(() => {
-    getPositions(setPositions);
   }, []);
 
   function windowWidth() {

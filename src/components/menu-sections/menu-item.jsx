@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Title from "../title/title";
 import CardList from "../card-list/card-list";
 import style from "./menu-item.css";

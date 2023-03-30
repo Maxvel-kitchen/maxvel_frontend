@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import Card from "../card/card";
-import { data } from "../../utils/constants";
+// import { data } from "../../utils/constants";
 import style from "./card-list.module.css";
 
-function CardList() {
+function CardList({ menu }) {
+  //   console.log(menu);
   return (
     <ul className={style.cards}>
-      {data?.map((item) => (
+      {menu?.map((item) => (
         <Card
           item={item}
           key={item.id}

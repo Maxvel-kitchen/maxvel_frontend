@@ -3,13 +3,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { persistStore, persistReducer } from "redux-persist";
 import localStorage from "redux-persist/lib/storage";
-// import mainMenuReducer from "./main-menu-reducer";
+import mainMenuReducer from "./main-menu-reducer";
 // import counterReducer from "./counter-reducer";
 import { cartReducer } from "./cart-slice";
 
 /* Объединяем редьюсеры в один общий редьюсер */
 const rootReducer = combineReducers({
   cart: cartReducer,
+  menu: mainMenuReducer,
 });
 
 /* Устанавливаем Redux DevTools */
