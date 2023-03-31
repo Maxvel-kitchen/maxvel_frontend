@@ -3,8 +3,8 @@
 // import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import style from "./menu-list.module.css";
-import Title from "../title/title";
-import ScrollButtons from "../scroll-buttons/scroll-buttons";
+import Title from "../../title/title";
+import ScrollButtons from "../../scroll-buttons/scroll-buttons";
 
 function MenuList({ categories }) {
   //   const location = useLocation({ onClose });

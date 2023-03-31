@@ -19,8 +19,8 @@ import Carousel from "../carousel/carousel";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
 import getCategories from "../../services/api/categories";
-import MenuItem from "../menu-sections/menu-item";
-import MenuList from "../menu-list/menu-list";
+import MenuItem from "./menu-item/menu-item";
+import MenuList from "./menu-list/menu-list";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
 import {
@@ -83,7 +83,7 @@ function Menu() {
           <ScrollToTop
             height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
           />
-          <Routes>
+          {/* <Routes>
             <Route exact path="/" element={<MenuItem title="Новинки" />} />
             {categories && (
               <Route
@@ -101,7 +101,7 @@ function Menu() {
                 element={<MenuItem title={category.name} />}
               />
             ))}
-          </Routes>
+          </Routes> */}
         </Element>
       </div>
     </main>

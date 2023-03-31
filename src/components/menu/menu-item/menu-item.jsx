@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import Title from "../title/title";
-import CardList from "../card-list/card-list";
+import Title from "../../title/title";
+import CardList from "../../card-list/card-list";
 import style from "./menu-item.css";
 
 // eslint-disable-next-line react/prop-types

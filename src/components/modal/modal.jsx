@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import style from "./modal.module.css";
-import MenuList from "../menu-list/menu-list";
+import MenuList from "../menu/menu-list/menu-list";
 
 function Modal({ isOpen, onClose }) {
   const modal = useRef();
