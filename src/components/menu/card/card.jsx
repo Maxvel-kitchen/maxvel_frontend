@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/self-closing-comp */
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
+// import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import style from "./card.module.css";
-import Counter from "../counter/counter";
-import Button from "../button/button";
-import { addToCart } from "../../services/redux/cart-slice";
+import Counter from "../../counter/counter";
+import Button from "../../button/button";
+import { addToCart } from "../../../services/redux/cart-slice";
 
 function Card({ item, id, title, price, image, newer, amount }) {
   const dispatch = useDispatch();
@@ -40,11 +38,11 @@ function Card({ item, id, title, price, image, newer, amount }) {
     </li>
   );
 }
-Card.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  newer: PropTypes.bool.isRequired,
-  amount: PropTypes.number.isRequired,
-};
+// Card.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   title: PropTypes.string.isRequired,
+//   price: PropTypes.string.isRequired,
+//   newer: PropTypes.bool.isRequired,
+//   amount: PropTypes.number.isRequired,
+// };
 export default Card;

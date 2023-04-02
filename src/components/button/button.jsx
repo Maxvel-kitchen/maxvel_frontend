@@ -1,4 +1,5 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
+// import PropTypes from "prop-types";
 import style from "./button.module.css";
 
 function Button({
@@ -24,23 +25,23 @@ function Button({
     </button>
   );
 }
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  styles: PropTypes.string,
-  transparent: PropTypes.bool,
-  submit: PropTypes.bool,
-  small: PropTypes.bool,
-  footer: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-};
-Button.defaultProps = {
-  styles: "",
-  transparent: false,
-  footer: false,
-  small: false,
-  submit: false,
-  disabled: false,
-};
+// Button.propTypes = {
+//   text: PropTypes.string.isRequired,
+//   styles: PropTypes.string,
+//   transparent: PropTypes.bool,
+//   submit: PropTypes.bool,
+//   small: PropTypes.bool,
+//   footer: PropTypes.bool,
+//   disabled: PropTypes.bool,
+//   onClick: PropTypes.func.isRequired,
+// };
+// Button.defaultProps = {
+//   styles: "",
+//   transparent: false,
+//   footer: false,
+//   small: false,
+//   submit: false,
+//   disabled: false,
+// };
 
 export default Button;

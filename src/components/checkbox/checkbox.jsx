@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import style from "./checkbox.module.css";
 
 function Checkbox({ register, styles, id }) {
@@ -31,10 +32,10 @@ function Checkbox({ register, styles, id }) {
   );
 }
 
-Checkbox.propTypes = {
-  styles: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
-};
+// Checkbox.propTypes = {
+//   styles: PropTypes.string.isRequired,
+//   id: PropTypes.string.isRequired,
+//   register: PropTypes.func.isRequired,
+// };
 
 export default Checkbox;

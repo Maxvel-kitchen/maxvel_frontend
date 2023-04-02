@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
@@ -10,29 +11,41 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+
 import { useState, useEffect, useCallback } from "react";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Carousel from "../carousel/carousel";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
 import getCategories from "../../services/api/categories";
-import MenuItem from "../menu-sections/menu-item";
-import MenuList from "../menu-list/menu-list";
+import MenuItem from "./menu-item/menu-item";
+import MenuList from "./menu-list/menu-list";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
-import getPositions from "../../services/api/position-list";
+import {
+  getNewPositions,
+  getPositions,
+} from "../../services/api/position-list";
+import { getMenu } from "../../services/redux/main-menu-slice";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
   const [categories, setCategories] = useState();
-  const [positions, setPositions] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getCategories(setCategories);
-  }, []);
-  useEffect(() => {
-    getPositions(setPositions);
+    Promise.all([getCategories(), getNewPositions()])
+      .then(([categoriesData, positionsData]) => {
+        setCategories(categoriesData);
+        dispatch(
+          getMenu({
+            payload: positionsData,
+          })
+        );
+      })
+      .catch((err) => console.log("error in PromiseAll: ", err));
   }, []);
 
   function windowWidth() {
@@ -64,25 +77,7 @@ function Menu() {
           <ScrollToTop
             height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
           />
-          <Routes>
-            <Route exact path="/" element={<MenuItem title="Новинки" />} />
-            {categories && (
-              <Route
-                exact
-                path="/menu"
-                element={
-                  <Navigate replace to={`/menu/${categories[0].slug}`} />
-                }
-              />
-            )}
-            {categories?.map((category) => (
-              <Route
-                key={category.id}
-                path={`/menu/${category.slug}`}
-                element={<MenuItem title={category.name} />}
-              />
-            ))}
-          </Routes>
+          <MenuItem />
         </Element>
       </div>
     </main>

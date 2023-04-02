@@ -1,11 +1,12 @@
+import { useSelector } from "react-redux";
 import Card from "../card/card";
-import { data } from "../../utils/constants";
 import style from "./card-list.module.css";
 
 function CardList() {
+  const { mainMenuList } = useSelector((state) => state.menu);
   return (
     <ul className={style.cards}>
-      {data?.map((item) => (
+      {mainMenuList.payload?.map((item) => (
         <Card
           item={item}
           key={item.id}

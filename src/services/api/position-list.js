@@ -1,14 +1,23 @@
+/* eslint-disable consistent-return */
 import axios from "axios";
-import { API_POSITION } from "./api";
+import { API_POSITION, API_POSITION_ON_CATEGORIES } from "./api";
 
-const getPositions = async (setCategories) => {
+const getNewPositions = async () => {
   try {
     const response = await axios.get(API_POSITION);
-    console.log(response.data);
-    setCategories(response.data);
+    return response.data;
   } catch (error) {
     console.error(error);
   }
 };
 
-export default getPositions;
+const getPositions = async (categorySlug) => {
+  try {
+    const response = await axios.get(API_POSITION_ON_CATEGORIES + categorySlug);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getNewPositions, getPositions };
