@@ -2,7 +2,6 @@
   min-width: 100%;
   border-radius: 30px !important;
   height: 50px !important;
-  border: 1px solid var(--button-text-color) !important;
   color: var(--main-bg-color);
   padding-left: 75px !important;
   box-sizing: border-box !important;
@@ -11,21 +10,15 @@
   background-color: transparent !important;
 }
 
-.input:focus {
-  border: 1px solid #fff !important;
-}
-
-.input_valid {
-  border: 1px solid var(--ok-color) !important;
-}
-.input_valid:focus {
+.input_valid,
+.input_valid:focus,
+.input_valid:hover {
   border: 1px solid var(--ok-color) !important;
 }
 
-.input_invalid {
-  border: 1px solid var(--error-color) !important;
-}
-.input_invalid:focus {
+.input_invalid,
+.input_invalid:focus,
+.input_invalid:hover {
   border: 1px solid var(--error-color) !important;
 }
 

@@ -38,6 +38,10 @@
   color: var(--sub-text-color);
 }
 
+.date:hover {
+  border: 1px solid #a9a9a9;
+}
+
 .input_number {
   border: 1px solid #78787a !important;
   color: var(--main-text-color);

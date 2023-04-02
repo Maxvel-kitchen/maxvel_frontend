@@ -12,7 +12,6 @@ import { useForm } from "react-hook-form";
 import InputNumber from "../input-number/input-number";
 import style from "./cart-form.module.css";
 import Input from "../input/input";
-import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
@@ -70,21 +69,21 @@ function CartForm() {
           value={state}
           onChange={() => setState()}
         />
-        <InputValidate
-          dirtyFields={dirtyFields.email}
+        <Input
+          styles={style.input}
           placeholder="Ваша почта"
           type="email"
           name="email"
+          validate={dirtyFields.email}
+          errors={errors.email}
+          emptyMessage="Введите почту"
+          incorrectMessage="Почта введена неверно"
           register={register("email", {
             required: true,
             pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
             minLength: 8,
           })}
-          errors={errors.email}
-          emptyMessage="Введите почту"
-          incorrectMessage="Почта введена неверно"
         />
-
         <div className={style.textarea}>
           <Input
             styles={style.input}

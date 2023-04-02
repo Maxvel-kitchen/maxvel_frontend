@@ -18,11 +18,40 @@
   color: #a9a9a9;
   opacity: 1;
 }
+.error {
+  color: var(--error-color);
+  font-size: var(--desktop-subtext-font);
+  margin: 5px 12px 0;
+  animation: appear 0.4s ease-in-out;
+}
+.input_error {
+  border-color: var(--error-color);
+}
+.input_ok {
+  border-color: var(--ok-color);
+}
+.input_error:hover {
+  border-color: var(--error-color);
+}
+.input_ok:hover {
+  border-color: var(--ok-color);
+}
 input:-webkit-autofill {
   -webkit-background-clip: text;
 }
 @media screen and (min-width: 768px) {
   .input {
     font-size: var(--mobile-maintext-font);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-7px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }

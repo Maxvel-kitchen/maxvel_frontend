@@ -89,8 +89,12 @@
 }
 
 .input {
-  border-color: var(--button-text-color);
+  border: 1px solid var(--main-bg-color);
   color: var(--main-bg-color);
+}
+
+.input:hover {
+  border-color: var(--button-text-color);
 }
 .fieldset input:-webkit-autofill {
   -webkit-background-clip: text;
