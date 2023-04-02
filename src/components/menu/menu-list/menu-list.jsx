@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
-// import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
+// import { NavLink } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../../title/title";
-import ScrollButtons from "../../scroll-buttons/scroll-buttons";
+import CategoryButton from "../category-button/category-button";
 
 function MenuList({ categories }) {
   //   const location = useLocation({ onClose });
@@ -15,17 +15,7 @@ function MenuList({ categories }) {
         <ul className={style.items}>
           {categories?.map((category) => (
             <li className={style.item} key={category.id}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? style.link_active : style.link
-                }
-                to={`/menu/${category.slug}`}
-              >
-                {category.name}
-              </NavLink>
-              {category.sub_categories !== [] && window.innerWidth > 768 ? (
-                <ScrollButtons subCategories={category.sub_categories} />
-              ) : null}
+              <CategoryButton category={category} />
             </li>
           ))}
         </ul>
@@ -33,9 +23,9 @@ function MenuList({ categories }) {
     </div>
   );
 }
-// MenuList.propTypes = {
-//   //   onClose: PropTypes.func.isRequired,
-//   categories: PropTypes.arrayOf.isRequired,
-// };
+MenuList.propTypes = {
+  //   onClose: PropTypes.func.isRequired,
+  categories: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default MenuList;

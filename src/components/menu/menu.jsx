@@ -24,26 +24,17 @@ import MenuList from "./menu-list/menu-list";
 import Title from "../title/title";
 import ScrollButtons from "../scroll-buttons/scroll-buttons";
 import {
-  //   getNewPositions,
+  getNewPositions,
   getPositions,
 } from "../../services/api/position-list";
+import { getMenu } from "../../services/redux/main-menu-reducer";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
   const [categories, setCategories] = useState();
   const [positions, setPositions] = useState();
-  //   const dispatch = useDispatch();
-  //   const { menu } = useSelector((state) => state.menu.mainMenuList);
-  //   useEffect(() => {
-  //     getPositions(setPositions, categorySlug);
-  //     console.log(positions);
-  //     dispatch({
-  //       type: "SET_POSITIONS",
-  //       payload: positions,
-  //     });
-  //     console.log(menu);
-  //   }, [categorySlug]);
+  const dispatch = useDispatch();
 
   function handleCategoryClick(category) {
     console.log("category: ", category);
@@ -51,7 +42,20 @@ function Menu() {
   }
 
   useEffect(() => {
-    getCategories(setCategories);
+    Promise.all([getCategories(), getNewPositions()])
+      .then(([categoriesData, positionsData]) => {
+        setCategories(categoriesData);
+        setPositions(positionsData);
+      })
+      .then(() => {
+        console.log(positions);
+        dispatch(
+          getMenu({
+            payload: positions,
+          })
+        );
+      })
+      .catch((err) => console.log("error in PromiseAll: ", err));
   }, []);
 
   function windowWidth() {
@@ -83,6 +87,7 @@ function Menu() {
           <ScrollToTop
             height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
           />
+          <MenuItem title="Новинки" />
           {/* <Routes>
             <Route exact path="/" element={<MenuItem title="Новинки" />} />
             {categories && (
@@ -94,14 +99,7 @@ function Menu() {
                 }
               />
             )}
-            {categories?.map((category) => (
-              <Route
-                key={category.id}
-                path={`/menu/${category.slug}`}
-                element={<MenuItem title={category.name} />}
-              />
-            ))}
-          </Routes> */}
+        </Routes> */}
         </Element>
       </div>
     </main>

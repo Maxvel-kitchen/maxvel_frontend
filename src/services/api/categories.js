@@ -1,10 +1,11 @@
+/* eslint-disable consistent-return */
 import axios from "axios";
 import { API_CATEGORIES } from "./api";
 
-const getCategories = async (setCategories) => {
+const getCategories = async () => {
   try {
     const response = await axios.get(API_CATEGORIES);
-    setCategories(response.data);
+    return response.data;
   } catch (error) {
     console.error(error);
   }

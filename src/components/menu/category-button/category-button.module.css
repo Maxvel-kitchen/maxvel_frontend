@@ -1,0 +1,36 @@
+.link {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding-left: 20px;
+    text-align: left;
+    cursor: pointer;
+  }
+  .link_active {
+    background-color: var(--main-bg-color);
+    color: var(--footer-bg-color);
+  }
+
+  .none {
+    display: none;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+  .link {
+    color: var(--main-text-color);
+  }
+  .link_active {
+    background-color: var(--secondary-bg-color);
+    color: var(--button-text-color);
+    padding-left: 20px;
+    /* margin-left: -20px;
+    border-radius: 20px; */
+  }
+}

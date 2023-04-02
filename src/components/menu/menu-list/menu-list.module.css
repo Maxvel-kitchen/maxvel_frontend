@@ -22,25 +22,7 @@
   font-size: 14px;
   line-height: 16px;
 }
-.link {
-  color: #fff;
-  text-decoration: none;
-  width: 100%;
-  display: block;
-  padding: 5px 0;
-  box-sizing: border-box;
-}
-.link_active {
-  background-color: var(--main-bg-color);
-  color: var(--footer-bg-color);
-  text-decoration: none;
-  padding: 4px 0 4px 12px;
-  box-sizing: border-box;
-  margin-left: -12px;
-  border-radius: 10px;
-  width: 100%;
-  display: block;
-}
+
 @media screen and (min-width: 768px) {
   .items {
     margin: 35px 0 0 0;
@@ -54,14 +36,5 @@
     line-height: 24px;
     color: var(--main-text-color);
   }
-  .link {
-    color: var(--main-text-color);
-  }
-  .link_active {
-    background-color: var(--secondary-bg-color);
-    color: var(--button-text-color);
-    padding: 5px 0 5px 20px;
-    margin-left: -20px;
-    border-radius: 20px;
-  }
+  
 }

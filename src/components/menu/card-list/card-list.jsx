@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import Card from "../card/card";
-// import { data } from "../../utils/constants";
 import style from "./card-list.module.css";
 
 function CardList({ menu }) {
@@ -22,5 +21,9 @@ function CardList({ menu }) {
     </ul>
   );
 }
+
+CardList.propTypes = {
+  menu: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default CardList;
