@@ -27,7 +27,7 @@ import {
   getNewPositions,
   getPositions,
 } from "../../services/api/position-list";
-import { getMenu } from "../../services/redux/main-menu-reducer";
+import { getMenu } from "../../services/redux/main-menu-slice";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);

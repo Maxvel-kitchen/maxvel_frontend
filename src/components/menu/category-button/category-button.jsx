@@ -5,7 +5,7 @@ import { useState } from "react";
 import ScrollButtons from "../../scroll-buttons/scroll-buttons";
 import { getPositions } from "../../../services/api/position-list";
 import style from "./category-button.module.css";
-import { getMenu, setTitle } from "../../../services/redux/main-menu-reducer";
+import { getMenu, setTitle } from "../../../services/redux/main-menu-slice";
 
 function CategoryButton({ category }) {
   const dispatch = useDispatch();

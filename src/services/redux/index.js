@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { persistStore, persistReducer } from "redux-persist";
 import localStorage from "redux-persist/lib/storage";
-import { menuReducer } from "./main-menu-reducer";
+import { menuReducer } from "./main-menu-slice";
 // import counterReducer from "./counter-reducer";
 import { cartReducer } from "./cart-slice";
 
