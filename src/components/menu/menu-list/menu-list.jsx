@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 // import PropTypes from "prop-types";
-// import { NavLink } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../../title/title";
 import CategoryButton from "../category-button/category-button";

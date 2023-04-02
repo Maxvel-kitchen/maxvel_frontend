@@ -1,21 +1,17 @@
-/* eslint-disable react/prop-types */
-
+import { useSelector } from "react-redux";
 import Title from "../../title/title";
 import CardList from "../card-list/card-list";
 import style from "./menu-item.css";
 
-function MenuItem({ title }) {
-  //   const dispatch = useDispatch();
+function MenuItem() {
+  const { title } = useSelector((state) => state.menu);
 
   return (
     <div className={style.container}>
-      <Title title={title} styles={style.title} />
+      <Title title={title.payload} styles={style.title} />
       <CardList />
     </div>
   );
 }
-// MenuItem.propTypes = {
-//   title: MenuItem.string.isRequired,
-// };
 
 export default MenuItem;

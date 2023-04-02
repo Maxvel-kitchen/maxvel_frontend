@@ -59,7 +59,7 @@ function Counter({ id, amount, styles, handleDelete }) {
   );
 }
 Counter.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   amount: PropTypes.number.isRequired,
 };
 export default Counter;

@@ -35,11 +35,6 @@ function Menu() {
   const [categories, setCategories] = useState();
   const dispatch = useDispatch();
 
-  function handleCategoryClick(category) {
-    console.log("category: ", category);
-    // console.log("menu: ", menu);
-  }
-
   useEffect(() => {
     Promise.all([getCategories(), getNewPositions()])
       .then(([categoriesData, positionsData]) => {
@@ -82,19 +77,7 @@ function Menu() {
           <ScrollToTop
             height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
           />
-          <MenuItem title="Новинки" />
-          {/* <Routes>
-            <Route exact path="/" element={<MenuItem title="Новинки" />} />
-            {categories && (
-              <Route
-                exact
-                path="/menu"
-                element={
-                  <Navigate replace to={`/menu/${categories[0].slug}`} />
-                }
-              />
-            )}
-        </Routes> */}
+          <MenuItem />
         </Element>
       </div>
     </main>

@@ -11,12 +11,10 @@ const getNewPositions = async () => {
   }
 };
 
-const getPositions = async (setPositions, categorySlug) => {
+const getPositions = async (categorySlug) => {
   try {
     const response = await axios.get(API_POSITION_ON_CATEGORIES + categorySlug);
-    console.log(response.data);
-    setPositions(response.data);
-    return response;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
