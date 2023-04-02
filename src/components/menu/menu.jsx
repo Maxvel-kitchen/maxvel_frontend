@@ -33,7 +33,6 @@ function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuList, setMenuList] = useState(true);
   const [categories, setCategories] = useState();
-  const [positions, setPositions] = useState();
   const dispatch = useDispatch();
 
   function handleCategoryClick(category) {
@@ -45,13 +44,9 @@ function Menu() {
     Promise.all([getCategories(), getNewPositions()])
       .then(([categoriesData, positionsData]) => {
         setCategories(categoriesData);
-        setPositions(positionsData);
-      })
-      .then(() => {
-        console.log(positions);
         dispatch(
           getMenu({
-            payload: positions,
+            payload: positionsData,
           })
         );
       })

@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
+
 import Title from "../../title/title";
 import CardList from "../card-list/card-list";
 import style from "./menu-item.css";
 
 function MenuItem({ title }) {
+  //   const dispatch = useDispatch();
+
   return (
     <div className={style.container}>
       <Title title={title} styles={style.title} />
@@ -10,8 +14,8 @@ function MenuItem({ title }) {
     </div>
   );
 }
-MenuItem.propTypes = {
-  title: MenuItem.string.isRequired,
-};
+// MenuItem.propTypes = {
+//   title: MenuItem.string.isRequired,
+// };
 
 export default MenuItem;

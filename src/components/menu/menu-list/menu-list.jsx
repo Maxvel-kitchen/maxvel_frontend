@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 // import { NavLink } from "react-router-dom";
 import style from "./menu-list.module.css";
 import Title from "../../title/title";
@@ -25,7 +25,7 @@ function MenuList({ categories }) {
 }
 MenuList.propTypes = {
   //   onClose: PropTypes.func.isRequired,
-  categories: PropTypes.instanceOf(Object).isRequired,
+  //   categories: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default MenuList;

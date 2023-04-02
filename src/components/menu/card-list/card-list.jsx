@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import Card from "../card/card";
 import style from "./card-list.module.css";
 
-function CardList({ menu }) {
-  //   console.log(menu);
+function CardList() {
+  const { mainMenuList } = useSelector((state) => state.menu);
   return (
     <ul className={style.cards}>
-      {menu?.map((item) => (
+      {mainMenuList.payload?.map((item) => (
         <Card
           item={item}
           key={item.id}
@@ -21,9 +21,5 @@ function CardList({ menu }) {
     </ul>
   );
 }
-
-CardList.propTypes = {
-  menu: PropTypes.instanceOf(Object).isRequired,
-};
 
 export default CardList;
