@@ -38,9 +38,13 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .link:hover {
   opacity: 0.8;
+}
+.link:focus {
+  animation: click 0.2s ease-out;
 }
 
 .link_instagram {
@@ -88,26 +92,12 @@
   gap: 15px;
 }
 
-.input {
-  border: 1px solid var(--main-bg-color);
-  color: var(--main-bg-color);
-}
-
-.input:hover {
-  border-color: var(--button-text-color);
-}
 .fieldset input:-webkit-autofill {
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--main-bg-color);
 }
 .input::placeholder {
   color: #d9d9d9;
-}
-.input_error {
-  border-color: var(--error-color);
-}
-.input_ok {
-  border-color: var(--ok-color);
 }
 
 .checkbox {
@@ -158,5 +148,18 @@
     margin: 24px 0 0 0;
     max-width: 100%;
     gap: 12px;
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

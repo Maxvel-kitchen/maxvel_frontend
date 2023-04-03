@@ -67,6 +67,11 @@
   background-repeat: no-repeat;
   cursor: pointer;
   justify-self: end;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.button_delete:hover {
+  opacity: 0.6;
 }
 @media screen and (max-width: 768px) {
   .item {

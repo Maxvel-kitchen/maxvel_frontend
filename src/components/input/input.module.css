@@ -1,22 +1,58 @@
 .input {
   width: 100%;
   border-radius: 30px;
-  height: 50px;
-  border: 1px solid var(--span-text-color);
+  height: 46px;
+  border: 1px solid #78787a;
+  color: var(--main-text-color);
   padding: 15px;
   box-sizing: border-box;
   line-height: 17px;
   outline: none;
-  font-family: "Inter";
   background-color: transparent;
   resize: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
+.textarea {
+  height: 50px;
+}
 .input::placeholder {
   color: #a9a9a9;
   opacity: 1;
+}
+
+.input:hover {
+  border-color: #a9a9a9;
+}
+.input:focus,
+.input:focus:hover {
+  border-color: #1e1e1e;
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.input_theme {
+  border: 1px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+.input_theme:hover {
+  border-color: var(--main-bg-color);
+}
+.input_theme:focus,
+.input_theme:focus:hover {
+  border-color: #fff;
+}
+
+.input_theme::placeholder {
+  color: #d9d9d9;
+}
+
+.input_theme:hover::placeholder {
+  color: #ddeace !important;
 }
 .error {
   color: var(--error-color);
@@ -24,18 +60,19 @@
   margin: 5px 12px 0;
   animation: appear 0.4s ease-in-out;
 }
-.input_error {
-  border-color: var(--error-color);
+.input_error,
+.input_error:hover,
+.input_error:focus,
+.input_error:focus:hover {
+  border-color: var(--error-color) !important;
 }
-.input_ok {
-  border-color: var(--ok-color);
+.input_ok,
+.input_ok:hover,
+.input_ok:focus,
+.input_ok:focus:hover {
+  border-color: var(--ok-color) !important;
 }
-.input_error:hover {
-  border-color: var(--error-color);
-}
-.input_ok:hover {
-  border-color: var(--ok-color);
-}
+
 input:-webkit-autofill {
   -webkit-background-clip: text;
 }

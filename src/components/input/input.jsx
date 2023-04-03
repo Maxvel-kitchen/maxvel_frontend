@@ -6,6 +6,7 @@ import style from "./input.module.css";
 
 function Input({
   styles,
+  theme,
   placeholder,
   type,
   name,
@@ -22,6 +23,7 @@ function Input({
         className={cn(
           style.input,
           styles,
+          theme ? style.input_theme : "",
           // eslint-disable-next-line no-nested-ternary
           validate && errors
             ? style.input_error
@@ -44,7 +46,12 @@ function Input({
     </div>
   ) : (
     <textarea
-      className={cn(style.input, styles)}
+      className={cn(
+        style.input,
+        style.textarea,
+        theme ? style.input_theme : "",
+        styles
+      )}
       placeholder={placeholder}
       type={type}
       name={name}
@@ -55,7 +62,8 @@ function Input({
   );
 }
 Input.propTypes = {
-  styles: PropTypes.string.isRequired,
+  styles: PropTypes.string,
+  theme: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -68,6 +76,8 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  styles: "",
+  theme: "",
   textarea: false,
   validate: false,
   errors: "",

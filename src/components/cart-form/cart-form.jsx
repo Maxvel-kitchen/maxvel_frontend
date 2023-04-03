@@ -24,7 +24,8 @@ function CartForm() {
     formState: { errors, isValid, dirtyFields },
     clearErrors,
   } = useForm({ mode: "onChange" });
-  const onSubmit = () => {
+  const onSubmit = (evt) => {
+    evt.preventDefault();
     clearErrors(["tel", "email"]);
   };
   const [startDate, setStartDate] = React.useState(null);
