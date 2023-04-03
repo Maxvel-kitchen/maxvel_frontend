@@ -27,7 +27,7 @@ function Header({ isOpen, count }) {
             aria-label="Кнопка меню"
           />
           <Element className={style.menu__box} name="/">
-            <NavLink className={style.navigation__link} to="/">
+            <NavLink to="/">
               <img
                 className={style.logo__image}
                 alt="Логотип Максвел"
@@ -45,7 +45,7 @@ function Header({ isOpen, count }) {
           </NavLink>
           <Link
             className={style.navigation__link}
-            activeClass={style.active}
+            activeClass={style.navigation__link_active}
             to="contacts"
             spy
             smooth

@@ -14,7 +14,6 @@ import {
 import { useForm } from "react-hook-form";
 import Map from "../map/map";
 import Input from "../input/input";
-import InputValidate from "../input-validate/input-validate";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
 import style from "./footer.module.css";
@@ -24,7 +23,13 @@ function Footer() {
   const {
     register,
     formState: { errors, isValid, dirtyFields },
+    clearErrors,
+    handleSubmit,
   } = useForm({ mode: "onChange" });
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    clearErrors(["tel", "email"]);
+  };
   return (
     <footer className={style.footer}>
       <div className={style.container}>
@@ -66,25 +71,24 @@ function Footer() {
           <p className={style.text}>Tochni 7740, Кипр</p>
           <Map />
         </div>
-        <form className={style.form}>
+        <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
           <p className={style.text}>
             Ничего не хочу решать, просто позвоните мне:
           </p>
           <fieldset className={style.fieldset}>
             <InputNumber
               styles={style.input}
+              theme
               dirtyFields={dirtyFields.tel}
               placeholder="Ваш номер телефона"
               type="tel"
               name="tel"
-              register={register("tel", {
-                required: true,
-                minLength: 10,
-              })}
             />
             <Input
               styles={style.input}
+              theme
               placeholder="Комментарий"
+              textarea
               type="text"
               name="comment"
               register={register("comment")}

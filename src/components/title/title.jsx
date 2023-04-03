@@ -8,7 +8,11 @@ function Title({ title, styles }) {
 
 Title.propTypes = {
   title: PropTypes.string.isRequired,
-  styles: PropTypes.string.isRequired,
+  styles: PropTypes.string,
+};
+
+Title.defaultProps = {
+  styles: "",
 };
 
 export default Title;

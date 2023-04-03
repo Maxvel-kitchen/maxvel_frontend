@@ -5,7 +5,7 @@ import style from "./checkbox.module.css";
 
 function Checkbox({ register, styles, id }) {
   return (
-    <div className={style.confirmation}>
+    <label className={style.confirmation} htmlFor={id}>
       <div className={style.confirmation__box}>
         <input
           className={`${style.confirmation__checkbox} ${styles}`}
@@ -27,14 +27,18 @@ function Checkbox({ register, styles, id }) {
           обработкой своих персональных данных
         </a>
       </p>
-    </div>
+    </label>
   );
 }
 
 Checkbox.propTypes = {
-  styles: PropTypes.string.isRequired,
+  styles: PropTypes.string,
   id: PropTypes.string.isRequired,
   register: PropTypes.func.isRequired,
+};
+
+Checkbox.defaultProps = {
+  styles: "",
 };
 
 export default Checkbox;

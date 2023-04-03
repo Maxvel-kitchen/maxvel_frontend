@@ -9,10 +9,9 @@ import ru from "date-fns/locale/ru";
 import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import PhoneInput from "react-phone-input-2";
+import InputNumber from "../input-number/input-number";
 import style from "./cart-form.module.css";
 import Input from "../input/input";
-import InputValidate from "../input-validate/input-validate";
 import Title from "../title/title";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
@@ -25,7 +24,8 @@ function CartForm() {
     formState: { errors, isValid, dirtyFields },
     clearErrors,
   } = useForm({ mode: "onChange" });
-  const onSubmit = () => {
+  const onSubmit = (evt) => {
+    evt.preventDefault();
     clearErrors(["tel", "email"]);
   };
   const [startDate, setStartDate] = React.useState(null);
@@ -61,7 +61,8 @@ function CartForm() {
           className={style.date}
           locale="ru"
         />
-        <PhoneInput
+        <InputNumber
+          styles={style.input_number}
           inputClass={phoneStyle.phone_input}
           buttonClass={phoneStyle.phone_button}
           dropdownClass={phoneStyle.phone_dropdown}
@@ -69,21 +70,21 @@ function CartForm() {
           value={state}
           onChange={() => setState()}
         />
-        <InputValidate
-          dirtyFields={dirtyFields.email}
+        <Input
+          styles={style.input}
           placeholder="Ваша почта"
           type="email"
           name="email"
+          validate={dirtyFields.email}
+          errors={errors.email}
+          emptyMessage="Введите почту"
+          incorrectMessage="Почта введена неверно"
           register={register("email", {
             required: true,
             pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
             minLength: 8,
           })}
-          errors={errors.email}
-          emptyMessage="Введите почту"
-          incorrectMessage="Почта введена неверно"
         />
-
         <div className={style.textarea}>
           <Input
             styles={style.input}
@@ -98,6 +99,7 @@ function CartForm() {
           <Input
             styles={style.input}
             placeholder="Комментарий"
+            textarea
             type="text"
             name="comment"
             register={register("comment")}

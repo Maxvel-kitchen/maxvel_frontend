@@ -30,7 +30,16 @@
   font-size: 12px;
   line-height: 15px;
   cursor: pointer;
+  transition: opacity 0.25s ease-in-out;
 }
+.navigation__link:hover {
+  opacity: 0.6;
+}
+.navigation__link:focus,
+.navigation__link:active {
+  animation: click 0.3s ease-out;
+}
+
 .menu__link {
   composes: navigation__link;
   display: none;
@@ -44,6 +53,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  transition: opacity 0.25s ease-in-out;
+}
+.cart__link:hover {
+  opacity: 0.6;
 }
 .badge {
   background-color: var(--footer-bg-color);
@@ -107,5 +120,21 @@
   }
   .navigation__link {
     font-size: var(--desktop-maintext-font);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(1px);
+    transform: scale(95%);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

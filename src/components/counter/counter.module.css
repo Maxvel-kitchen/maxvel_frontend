@@ -14,6 +14,14 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity 0.25s ease-in-out;
+}
+.button:hover {
+  opacity: 0.6;
+}
+
+.button:focus {
+  animation: click 0.3s ease-in;
 }
 
 .button_left {
@@ -51,4 +59,19 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+@keyframes click {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(1px);
+    transform: scale(97%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

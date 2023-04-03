@@ -10,8 +10,8 @@
 .date {
   width: 100%;
   border-radius: 30px;
-  height: 50px;
-  border: 1px solid var(--span-text-color);
+  height: 46px;
+  border: 1px solid #78787a;
   padding: 15px;
   box-sizing: border-box;
   background-color: transparent;
@@ -19,11 +19,14 @@
   background-repeat: no-repeat;
   background-position: right 30px top 10px;
   line-height: 17px;
-  font-family: Inter;
   outline: none;
 }
 .date::placeholder {
   color: var(--sub-text-color);
+}
+
+.date:hover {
+  border: 1px solid #a9a9a9;
 }
 
 @media screen and (min-width: 768px) {
