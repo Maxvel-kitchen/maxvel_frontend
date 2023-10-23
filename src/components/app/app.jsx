@@ -38,7 +38,7 @@ function App() {
         <Route path="/consent" element={<Consent />} />
         <Route
           path={!location === "/menu" || "/cart" || "/order"}
-          element={<Navigate replace exact path="*" />}
+          element={<Navigate replace exact to="/menu" />}
         />
       </Routes>
       <Footer />

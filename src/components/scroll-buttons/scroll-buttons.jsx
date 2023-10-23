@@ -22,7 +22,7 @@ function ScrollButtons() {
             spy
             smooth
             duration={700}
-            offset={-100}
+            offset={-140}
           >
             Мясо и птица
           </Link>
@@ -35,7 +35,7 @@ function ScrollButtons() {
             spy
             smooth
             duration={700}
-            offset={-100}
+            offset={-140}
           >
             Рыба
           </Link>
@@ -48,7 +48,7 @@ function ScrollButtons() {
             spy
             smooth
             duration={700}
-            offset={-100}
+            offset={-140}
           >
             Без мяса
           </Link>

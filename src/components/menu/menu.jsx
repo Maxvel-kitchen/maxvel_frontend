@@ -22,11 +22,11 @@ import Sauce from "../menu-sections/sauce/sauce";
 import Kids from "../menu-sections/kids/kids";
 import Dessert from "../menu-sections/dessert/dessert";
 import Drink from "../menu-sections/drink/drink";
-import Station from "../menu-sections/station/station";
 import Service from "../menu-sections/service/service";
 import MenuList from "../menu-list/menu-list";
 import style from "./menu.module.css";
 import ScrollToTop from "../scroll-to-top/scroll-to-top";
+import Asia from "../menu-sections/asia/asia";
 
 function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -56,15 +56,11 @@ function Menu() {
         <Element className={style.menu__box} name="menu">
           <div className={style.sticky}>{menuList && <MenuList />}</div>
           <ScrollToTop
-            height={location.pathname === "/" ? 0 : width < 768 ? 460 : 680}
+            height={location.pathname === "/menu" ? 0 : width < 768 ? 460 : 680}
           />
           <Routes>
-            <Route exact path="/" element={<New />} />
-            <Route
-              exact
-              path="/menu"
-              element={<Navigate replace to="/menu/new" />}
-            />
+            {/* <Route exact path="/" element={<New />} /> */}
+            <Route exact path="/" element={<Navigate to="/menu/new" />} />
             <Route path="/menu/new" element={<New />} />
             <Route path="/menu/starter" element={<Starter />} />
             <Route path="/menu/salad" element={<Salad />} />
@@ -74,7 +70,7 @@ function Menu() {
             <Route path="/menu/kids" element={<Kids />} />
             <Route path="/menu/dessert" element={<Dessert />} />
             <Route path="/menu/drink" element={<Drink />} />
-            <Route path="/menu/station" element={<Station />} />
+            <Route path="/menu/asia" element={<Asia />} />
             <Route path="/menu/service" element={<Service />} />
           </Routes>
         </Element>

@@ -67,6 +67,12 @@
   background-repeat: no-repeat;
   cursor: pointer;
   justify-self: end;
+
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
 @media screen and (max-width: 768px) {
   .item {

@@ -4,12 +4,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
 import "./date-picker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
+import { removeAll } from "../../services/redux/cart-slice";
 import style from "./cart-form.module.css";
 import Input from "../input/input";
 import InputValidate from "../input-validate/input-validate";
@@ -17,8 +20,12 @@ import Title from "../title/title";
 import Button from "../button/button";
 import Checkbox from "../checkbox/checkbox";
 import phoneStyle from "./input-phone.module.css";
+import { fillOrder } from "../../services/redux/order-slice";
 
 function CartForm() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { items, totalCount } = useSelector((state) => state.cart);
   const {
     register,
     handleSubmit,
@@ -27,6 +34,9 @@ function CartForm() {
   } = useForm({ mode: "onChange" });
   const onSubmit = () => {
     clearErrors(["tel", "email"]);
+    dispatch(fillOrder({ itemsList: items, total: totalCount }));
+    navigate("/order");
+    dispatch(removeAll());
   };
   const [startDate, setStartDate] = React.useState(null);
   registerLocale("ru", ru);

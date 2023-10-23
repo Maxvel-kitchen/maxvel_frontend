@@ -12,6 +12,7 @@ import ScrollButtons from "../../scroll-buttons/scroll-buttons";
 import Title from "../../title/title";
 import CardList from "../../card-list/card-list";
 import style from "./main-dish.module.css";
+import { mainDish } from "../../../utils/constants";
 
 function MainDish() {
   return (
@@ -21,15 +22,15 @@ function MainDish() {
       </div>
       <Element name="link1" className={style.element}>
         <Title title="Мясо и птица" styles={style.title} />
-        <CardList />
+        <CardList data={mainDish[0]} />
       </Element>
       <Element name="link2" className={style.element}>
-        <Title title="Рыба" styles={style.title} />
-        <CardList />
+        <Title title="Рыба и морепродукты" styles={style.title} />
+        <CardList data={mainDish[1]} />
       </Element>
       <Element name="link3" className={style.element}>
         <Title title="Без мяса" styles={style.title} />
-        <CardList />
+        <CardList data={mainDish[2]} />
       </Element>
     </div>
   );

@@ -30,6 +30,11 @@
   font-size: 12px;
   line-height: 15px;
   cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
 .menu__link {
   composes: navigation__link;
@@ -38,8 +43,8 @@
 
 .cart__link {
   composes: navigation__link;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background-image: url(../../images/cart.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -89,8 +94,8 @@
   }
   .cart__link {
     margin-left: 100px;
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
   .badge {
     width: 20px;

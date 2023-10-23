@@ -74,7 +74,7 @@ function MenuList({ onClose }) {
               <ScrollButtons />
             ) : null}
           </li>
-          <li className={style.item}>
+          {/* <li className={style.item}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
@@ -84,8 +84,8 @@ function MenuList({ onClose }) {
             >
               Соусы
             </NavLink>
-          </li>
-          <li className={style.item}>
+          </li> */}
+          {/* <li className={style.item}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
@@ -95,7 +95,7 @@ function MenuList({ onClose }) {
             >
               Детское
             </NavLink>
-          </li>
+          </li> */}
           <li className={style.item}>
             <NavLink
               className={({ isActive }) =>
@@ -112,24 +112,13 @@ function MenuList({ onClose }) {
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
               }
-              to="/menu/drink"
+              to="/menu/asia"
               onClick={onClose}
             >
-              Напитки
+              Азия
             </NavLink>
           </li>
-          <li className={style.item}>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? style.link_active : style.link
-              }
-              to="/menu/station"
-              onClick={onClose}
-            >
-              Станция
-            </NavLink>
-          </li>
-          <li className={style.item}>
+          {/* <li className={style.item}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? style.link_active : style.link
@@ -139,7 +128,7 @@ function MenuList({ onClose }) {
             >
               Услуги
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

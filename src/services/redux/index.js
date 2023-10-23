@@ -6,10 +6,12 @@ import localStorage from "redux-persist/lib/storage";
 // import mainMenuReducer from "./main-menu-reducer";
 // import counterReducer from "./counter-reducer";
 import { cartReducer } from "./cart-slice";
+import { orderReducer } from "./order-slice";
 
 /* Объединяем редьюсеры в один общий редьюсер */
 const rootReducer = combineReducers({
   cart: cartReducer,
+  order: orderReducer,
 });
 
 /* Устанавливаем Redux DevTools */

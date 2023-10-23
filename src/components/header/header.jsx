@@ -27,7 +27,17 @@ function Header({ isOpen, count }) {
             aria-label="Кнопка меню"
           />
           <Element className={style.menu__box} name="/">
-            <NavLink className={style.navigation__link} to="/">
+            <NavLink
+              className={style.navigation__link}
+              to="/menu/new"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
               <img
                 className={style.logo__image}
                 alt="Логотип Максвел"
@@ -39,7 +49,7 @@ function Header({ isOpen, count }) {
         <nav className={style.navigation__links}>
           <NavLink
             className={cn(style.navigation__link, style.menu__link)}
-            to="/menu"
+            to="/"
           >
             Меню
           </NavLink>
